@@ -14,7 +14,7 @@ async function gitAdd(){
 }
 
 async function gitCommit(commit_message){
-	exec(`git commit -m ${commit_message}`, (err, stdout, stderr) => {
+	exec(`git commit -m "${commit_message}"`, (err, stdout, stderr) => {
 		if (err) {
 			console.error(err)
 			return
