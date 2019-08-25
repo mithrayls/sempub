@@ -16,6 +16,7 @@ async function gitCommit(commit_message){
 			console.error(err)
 			return
 		}
+		console.log(stdout)
 	})
 	return
 }
