@@ -1,27 +1,4 @@
 {
-  "_from": "sempub@0.0.6",
-  "_id": "sempub@0.0.6",
-  "_inBundle": false,
-  "_integrity": "sha512-cOV7+UtPGQBZzQZIRlt2puIkl43VSL9JZIox5cuO1PVU5UpxdluImP77uMD5p1r9FaKdknkeLciMsPu6Q7ST6w==",
-  "_location": "/sempub",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "sempub@0.0.6",
-    "name": "sempub",
-    "escapedName": "sempub",
-    "rawSpec": "0.0.6",
-    "saveSpec": null,
-    "fetchSpec": "0.0.6"
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/sempub/-/sempub-0.0.6.tgz",
-  "_shasum": "efede3d234dff2d31004e43180253b6cd000f1d0",
-  "_spec": "sempub@0.0.6",
-  "_where": "/home/raymond/backup/mithray/sempub",
   "author": "",
   "bin": {
     "sempub": "./bin/index.js"
