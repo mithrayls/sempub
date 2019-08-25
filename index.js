@@ -128,7 +128,11 @@ function log(message) {
 }
 
 
-promptDetails()
-	.then( confirmPublish )
-	.then( publish )
-	.then( log )
+async function sempub(){
+	promptDetails()
+		.then( confirmPublish )
+		.then( publish )
+		.then( log )
+}
+
+module.exports = sempub
