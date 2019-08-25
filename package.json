@@ -1,4 +1,27 @@
 {
+  "_from": "sempub@0.0.8",
+  "_id": "sempub@0.0.8",
+  "_inBundle": false,
+  "_integrity": "sha512-dT2WNLvuRIebGMeysLh4eQffWWzo5t8ii3mOA6SmE9LLSMpD/ufscusWFeKdUiMeG53VZB9B237PYcrCris9vw==",
+  "_location": "/sempub",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "sempub@0.0.8",
+    "name": "sempub",
+    "escapedName": "sempub",
+    "rawSpec": "0.0.8",
+    "saveSpec": null,
+    "fetchSpec": "0.0.8"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/sempub/-/sempub-0.0.8.tgz",
+  "_shasum": "bb2283460952f599258ee5eb37d115fc7c5760a1",
+  "_spec": "sempub@0.0.8",
+  "_where": "/home/raymond/backup/mithray/sempub",
   "author": "",
   "bin": {
     "sempub": "./bin/index.js"
@@ -20,5 +43,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.0.8"
+  "version": "0.0.9"
 }
