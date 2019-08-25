@@ -4,6 +4,7 @@ const config = require('./package.json')
 const Configstore = require('configstore')
 const config_store = new Configstore(config.name)
 const version = config.version
+const git = require('./lib/git.js')
 
 async function updatePackageJSON(version){
 	config.version = version
@@ -92,19 +93,24 @@ async function promptDetails(){
 
 
 async function confirmPublish(details) {
+
 	let confirm = await inquirer
 	  .prompt( confirmation )
 	  .then( answers => {
 			return answers.confirmation
 	  })
+
 	return confirm
 
 }
+
+
 async function publish(confirmation) {
 
 	if ( confirmation ) {
 		let version = publication_details.version
 		await updatePackageJSON(version)
+		await git(publication_details.commit_message)
 		return "published"
 	} else {
 		return "not published"
@@ -112,10 +118,12 @@ async function publish(confirmation) {
 
 }
 
+
 function log(message) {
 	console.log(message)
 	return message
 }
+
 
 promptDetails()
 	.then( confirmPublish )
