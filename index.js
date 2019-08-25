@@ -1,10 +1,21 @@
 const fs = require('fs')
 const c = require('ansi-colors')
 const inquirer = require('inquirer')
-const config = require('./package.json')
+
+const readPkg = require('read-pkg')
 const Configstore = require('configstore')
-const config_store = new Configstore(config.name)
-const version = config.version
+var version
+var config_store
+
+async function readPackageJSON() {
+	config = await readPkg()
+	config_store = new Configstore(config.name)
+	version = config.version
+	if (config_store.prompt_release_notes){
+		questions.push(release_notes)
+	}
+}
+
 const git = require('./lib/git.js')
 const npmPublish = require('./lib/npmPublish.js')
 
@@ -16,6 +27,7 @@ async function updatePackageJSON(version){
 }
 
 function incrementVersion( version, release_type ){
+				console.log(version)
 	let version_arr = version.split('.')
 
 	if ( release_type === 'patch'){
@@ -53,10 +65,6 @@ const release_notes = {
 		type: 'editor',
 		name: 'release_notes',
 		message: 'Please enter release notes(optional).'
-}
-
-if (config_store.prompt_release_notes){
-	questions.push(release_notes)
 }
 
 const confirmation = [{
@@ -129,7 +137,8 @@ function log(message) {
 
 
 async function sempub(){
-	promptDetails()
+	readPackageJSON()
+		.then( promptDetails )
 		.then( confirmPublish )
 		.then( publish )
 		.then( log )
