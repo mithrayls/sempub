@@ -6,6 +6,7 @@ const Configstore = require('configstore')
 const config_store = new Configstore(config.name)
 const version = config.version
 const git = require('./lib/git.js')
+const npmPublish = require('./lib/npmPublish.js')
 
 async function updatePackageJSON(version){
 	config.version = version
@@ -112,6 +113,7 @@ async function publish(confirmation) {
 		let version = publication_details.version
 		await updatePackageJSON(version)
 		await git(publication_details.commit_message)
+		await npmPublish()
 		return "published"
 	} else {
 		return "not published"
