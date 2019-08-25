@@ -1,4 +1,5 @@
 const fs = require('fs')
+const c = require('ansi-colors')
 const inquirer = require('inquirer')
 const config = require('./package.json')
 const Configstore = require('configstore')
@@ -84,7 +85,7 @@ async function promptDetails(){
 			let version = publication_details.version
 			let type = publication_details.release_type
 
-			confirmation[0].message = `Do you wish to publish the ${type} release with version number ${version}?`
+			confirmation[0].message = `Do you wish to publish the ${c.blue(type)} release with version number ${version}?`
 
 			return publication_details
 	  })
