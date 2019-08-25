@@ -19,7 +19,9 @@ async function gitCommit(commit_message){
 			console.error(err)
 			return
 		}
-	console.log(stdout)
+		console.log(stdout)
+		console.log(stderr)
+		console.log(err)
 	})
 	return
 }
@@ -31,6 +33,8 @@ async function gitPush(){
 			return
 		}
 		console.log(stdout)
+		console.log(stderr)
+		console.log(err)
 	})
 	return
 }
