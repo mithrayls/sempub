@@ -6,7 +6,6 @@ async function gitAdd(){
 			console.error(err)
 			return
 		}
-		console.log(stdout)
 	})
 	return
 }
@@ -17,7 +16,6 @@ async function gitCommit(commit_message){
 			console.error(err)
 			return
 		}
-		console.log(stdout)
 	})
 	return
 }
