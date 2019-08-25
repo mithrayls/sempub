@@ -7,8 +7,6 @@ async function gitAdd(){
 			return
 		}
 		console.log(stdout)
-		console.log(stderr)
-		console.log(err)
 	})
 	return
 }
@@ -20,8 +18,6 @@ async function gitCommit(commit_message){
 			return
 		}
 		console.log(stdout)
-		console.log(stderr)
-		console.log(err)
 	})
 	return
 }
@@ -33,8 +29,8 @@ async function gitPush(){
 			return
 		}
 		console.log(stdout)
-		console.log(stderr)
-		console.log(err)
+//		console.log(stderr)
+//		console.log(err)
 	})
 	return
 }
