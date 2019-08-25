@@ -28,7 +28,7 @@ async function gitPush(){
 			return
 		}
 		console.log(stdout)
-//		console.log(stderr)
+		console.log(stderr)
 //		console.log(err)
 	})
 	return
