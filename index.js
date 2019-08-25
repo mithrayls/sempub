@@ -85,7 +85,7 @@ async function promptDetails(){
 			let version = publication_details.version
 			let type = publication_details.release_type
 
-			confirmation[0].message = `Do you wish to publish the ${c.blue(type)} release with version number ${version}?`
+			confirmation[0].message = `Do you wish to publish the ${c.italic.blue(type)} release with version number ${version}?`
 
 			return publication_details
 	  })
