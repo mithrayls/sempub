@@ -134,7 +134,6 @@ async function confirmPublish( options ) {
 
 async function addReleaseNotes(options) {
 	version				= options.details.version
-				console.log(options)
 	let release_notes = options.details.release_notes
 	release_notes = release_notes.replace(/^gm/,'* ')
 	release_notes = `\n### Release ${version}\n\n${release_notes}`
@@ -143,8 +142,6 @@ async function addReleaseNotes(options) {
 }
 
 async function publish(options) {
-
-	console.log(options)
 
 	if ( options.confirm ) {
 		let version = publication_details.version
