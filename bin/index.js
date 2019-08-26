@@ -1,14 +1,39 @@
 #! /usr/bin/node
 
+const readPackageJson = require('read-pkg')
+const prog = require('caporal');
 const sempub = require('../index.js')
+const initConfig = require('../lib/init.js')
 
-const args = process.argv.splice(process.execArgv.length + 2)
 
-const arg = args[0]
+async function init( args, options, logger){
+	initConfig()
+}
 
-sempub()
-/*
-	.then( res => {
-		console.log(res)
-	})
-	*/
+
+async function publish( args, options, logger){
+	if ( options.message ) {
+		let message = options.message
+		sempub(message)
+	} else {
+		sempub('')
+	}
+}
+
+
+async function startCLI(config){
+	prog
+		.version(config.version)
+
+		.command( 'init', 'initialize configuration')
+		.action( init )
+
+		.command( 'publish', 'publish package')
+		.action( publish )
+		.option( '--message <message>', 'git commit message')
+
+	prog.parse(process.argv)
+}
+
+readPackageJson()
+	.then( startCLI )

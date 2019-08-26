@@ -11,9 +11,10 @@ async function readPackageJSON() {
 	config = await readPkg()
 	config_store = new Configstore(config.name)
 	version = config.version
-	if (config_store.prompt_release_notes){
+	if (config_store.get('prompt_release_notes')){
 		questions.push(release_notes)
 	}
+	return config_store
 }
 
 const git = require('./lib/git.js')
@@ -27,7 +28,6 @@ async function updatePackageJSON(version){
 }
 
 function incrementVersion( version, release_type ){
-				console.log(version)
 	let version_arr = version.split('.')
 
 	if ( release_type === 'patch'){
@@ -50,17 +50,17 @@ function incrementVersion( version, release_type ){
 }
 
 const questions = [{
-		type: 'input',
-		name: 'commit_message',
-		message: 'Please write a git commit message.'
-	}, {
 		type: 'list',
 		name: 'release_type',
 		message: 'Select version type.',
 		choices: [ 'Patch', 'Minor', 'Major' ]
-	}
-]
+	}]
 
+const commit_message_query = {
+		type: 'input',
+		name: 'commit_message',
+		message: 'Please write a git commit message.'
+}
 const release_notes = {
 		type: 'editor',
 		name: 'release_notes',
@@ -80,29 +80,45 @@ const publication_details = {
 	release_notes: "",
 }
 
+function checkInformation(commit_message){
+	if ( commit_message.length > 0 ){
+		let prompt_for_message = false
+		return { prompt_for_message, commit_message }
+	} else {
+		questions.push(commit_message_query)
+		let prompt_for_message = true
+		return { prompt_for_message, commit_message }
+	}
+}
 
-async function promptDetails(){
+async function promptDetails( options ){
 	let details = await inquirer
 		.prompt( questions )
   	.then( answers => {
 			let current_version = config.version
 			publication_details.release_type = answers.release_type.toLowerCase()
 			publication_details.version = incrementVersion( current_version, publication_details.release_type )
-			publication_details.commit_message = answers.commit_message
+			if ( options.prompt_for_message ) {
+				publication_details.commit_message = answers.commit_message
+			} else {
+				publication_details.commit_message = options.commit_message
+			}
 			publication_details.release_notes = answers.release_notes
 
 			let version = publication_details.version
 			let type = publication_details.release_type
+			let commit_message = publication_details.commit_message
 
-			confirmation[0].message = `Do you wish to publish a ${c.italic.blue(type)} release with version number ${version}?`
+			confirmation[0].message = `Do you wish to publish a ${c.italic.blue(type)} release with version number ${version} and commit message ${c.italic.blue(commit_message)}?`
 
 			return publication_details
 	  })
-	return details 
+	options.details = details
+	return options
 }
 
 
-async function confirmPublish(details) {
+async function confirmPublish( options ) {
 
 	let confirm = await inquirer
 	  .prompt( confirmation )
@@ -110,17 +126,23 @@ async function confirmPublish(details) {
 			return answers.confirmation
 	  })
 
-	return confirm
+	options.confirm = confirm
+
+	return options
 
 }
 
 
-async function publish(confirmation) {
+async function publish(options) {
 
-	if ( confirmation ) {
+				console.log(options)
+
+	if ( options.confirm ) {
 		let version = publication_details.version
 		await updatePackageJSON(version)
-		await git(publication_details.commit_message)
+		if (options.config.git){
+			await git(publication_details.commit_message)
+		}
 		await npmPublish()
 		return "published"
 	} else {
@@ -136,9 +158,15 @@ function log(message) {
 }
 
 
-async function sempub(){
-	readPackageJSON()
-		.then( promptDetails )
+async function sempub(message){
+
+	let config_store = await readPackageJSON()
+	let config = config_store.all
+
+	let options = checkInformation(message)
+	options.config = config
+
+	promptDetails(options)
 		.then( confirmPublish )
 		.then( publish )
 		.then( log )
