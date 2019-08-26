@@ -35,3 +35,7 @@ Append release notes to README.md
 ### Release 0.0.26
 
 Tidied Readme
+
+### Release 0.0.27
+
+fixed error for no release notes

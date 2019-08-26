@@ -135,7 +135,9 @@ async function confirmPublish( options ) {
 async function addReleaseNotes(options) {
 	version				= options.details.version
 	let release_notes = options.details.release_notes
-	release_notes = release_notes.replace(/^gm/,'* ')
+	if ( release_notes.length > 0 ) {
+		release_notes = release_notes.replace(/^gm/,'* ')
+	}
 	release_notes = `\n### Release ${version}\n\n${release_notes}`
 	await fs.appendFileSync('./README.md', release_notes)
 	return
