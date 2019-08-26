@@ -2,11 +2,12 @@ const fs = require('fs')
 const c = require('ansi-colors')
 const inquirer = require('inquirer')
 
-
 const readPkg = require('read-pkg')
 const Configstore = require('configstore')
 var version
 var config_store
+
+
 
 async function readPackageJSON() {
 	config = await readPkg()
