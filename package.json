@@ -21,7 +21,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.0.10",
+  "version": "0.0.11",
   "readme": "ERROR: No README data found!",
-  "_id": "sempub@0.0.9"
+  "_id": "sempub@0.0.10"
 }
