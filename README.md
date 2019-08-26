@@ -18,16 +18,20 @@ Initialization will walk you through a prompt to define what the command should 
 sempub init
 ```
 
-### publish
+### Publish
 
 ```bash
-//will prompt for commit message
+# will prompt for commit message
 sempub publish
 
-//will not prompt for commit message
+# will not prompt for commit message
 sempub publish --message "commit message"
 ```
 
 ### Release 0.0.25
 
 Append release notes to README.md
+
+### Release 0.0.26
+
+Tidied Readme
