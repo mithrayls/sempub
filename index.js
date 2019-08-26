@@ -12,7 +12,7 @@ async function readPackageJSON() {
 	config_store = new Configstore(config.name)
 	version = config.version
 	if (config_store.get('prompt_release_notes')){
-		questions.push(release_notes)
+		questions.push(release_notes_query)
 	}
 	return config_store
 }
@@ -61,7 +61,7 @@ const commit_message_query = {
 		name: 'commit_message',
 		message: 'Please write a git commit message.'
 }
-const release_notes = {
+const release_notes_query = {
 		type: 'editor',
 		name: 'release_notes',
 		message: 'Please enter release notes(optional).'
@@ -132,12 +132,24 @@ async function confirmPublish( options ) {
 
 }
 
+async function addReleaseNotes(options) {
+	version				= options.details.version
+				console.log(options)
+	let release_notes = options.details.release_notes
+	release_notes = release_notes.replace(/^gm/,'* ')
+	release_notes = `\n### Release ${version}\n\n${release_notes}`
+	await fs.appendFileSync('./README.md', release_notes)
+	return
+}
 
 async function publish(options) {
+
+	console.log(options)
 
 	if ( options.confirm ) {
 		let version = publication_details.version
 		await updatePackageJSON(version)
+		await addReleaseNotes(options)
 		if (options.config.git){
 			await git(publication_details.commit_message)
 		}

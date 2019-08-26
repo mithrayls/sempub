@@ -21,3 +21,8 @@ sempub init
 ###
 
 
+
+### Release 0.0.24
+
+append release notes
+append release notes
