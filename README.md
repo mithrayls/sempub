@@ -1,6 +1,8 @@
 # Sempub
 *increments semantic version, pushes to git, and publishes to NPM*
 
+I don't recommend using this yet. There still seem to be a lot of bugs.
+
 ## Installation
 
 ```bash
@@ -28,21 +30,10 @@ sempub publish
 sempub publish --message "commit message"
 ```
 
-### Release 0.0.25
-
-Append release notes to README.md
-
-### Release 0.0.26
-
-Tidied Readme
-
-### Release 0.0.27
-
-fixed error for no release notes
-
-### Release 0.0.28
-
-
 ### Release 0.0.29
 
 fixed release notes bug
+
+### Release 0.0.30
+
+made npm publish use public access flag by default
