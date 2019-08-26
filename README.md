@@ -42,3 +42,7 @@ fixed error for no release notes
 
 ### Release 0.0.28
 
+
+### Release 0.0.29
+
+fixed release notes bug

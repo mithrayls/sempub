@@ -150,7 +150,9 @@ async function publish(options) {
 	if ( options.confirm ) {
 		let version = publication_details.version
 		await updatePackageJSON(version)
-		await addReleaseNotes(options)
+		if (options.config.prompt_release_notes) {
+			await addReleaseNotes(options)
+		}
 		if (options.config.git){
 			await git(publication_details.commit_message)
 		}
