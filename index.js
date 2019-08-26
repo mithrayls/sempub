@@ -135,8 +135,6 @@ async function confirmPublish( options ) {
 
 async function publish(options) {
 
-				console.log(options)
-
 	if ( options.confirm ) {
 		let version = publication_details.version
 		await updatePackageJSON(version)
