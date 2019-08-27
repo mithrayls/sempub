@@ -35,6 +35,11 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.1
+
+version
+
+
 ### Release 0.1.0
 
 path reference fixed
