@@ -47,7 +47,7 @@ sempub publish --message "commit message"
 - [ ] Streamline init
   - [ ] git init
   - [ ] npm init
-- [ ] CLI markdown prompts
+- [x] CLI markdown prompts
 - [ ] More Testing
 - [ ] Mocha
 - [ ] Linting
@@ -58,6 +58,10 @@ sempub publish --message "commit message"
 - [ ] UML Diagrams
 
 ## Release Notes
+
+### Release 0.1.25
+
+added CLI markdown prompt
 
 ### Release 0.1.24
 
