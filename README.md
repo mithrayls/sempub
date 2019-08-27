@@ -47,6 +47,11 @@ Hints for commit messages [Seven Rules of a great Git commit message](https://ch
 
 ## Release Notes
 
+### Release 0.1.22
+
+finally fixed release notes spacing bug
+
+
 ### Release 0.1.21
 
 aoneuh
