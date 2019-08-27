@@ -47,6 +47,12 @@ Hints for commit messages [Seven Rules of a great Git commit message](https://ch
 
 ## Release Notes
 
+### Release 0.1.10
+
+modify git commit message prompt to use editor, for multiline commits
+fix release notes adding too many spacings
+
+
 ### Release 0.1.9
 
 release notes uses single spacing
