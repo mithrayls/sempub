@@ -35,6 +35,11 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.0.47
+
+testing
+
+
 ### Release 0.0.46
 
 more helpful confirmation message
@@ -43,18 +48,3 @@ more helpful confirmation message
 ### Release 0.0.45
 
 refactor
-
-
-### Release 0.0.44
-
-refactor
-
-
-### Release 0.0.43
-
-err message
-
-### Release 0.0.42
-
-refactor
-
