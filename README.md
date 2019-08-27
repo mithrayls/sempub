@@ -67,41 +67,45 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.28
+
+* tidy readme
+
 ### Release 0.1.27
 
-* fix emoji shortcodes not working 😀
+* Fix emoji shortcodes not working 😀
 
 ### Release 0.1.26
 
-* * added commit hint :grinnning:
-* * fixed release notes not creating list
+* Add commit hint 😀
+* Fix release notes not creating list
 
 ### Release 0.1.25
 
-* added CLI markdown prompt
+* Add CLI markdown prompt
 
 ### Release 0.1.24
 
-* added roadmap
-* improved readme structure
+* Add roadmap
+* Improve readme structure
 
 ### Release 0.1.22
 
-* fix release notes spacing bug
+* Fix release notes spacing bug
 
 ### Release 0.1.19
 
-* simplify initialization logic using inquirer's confirm type
+* Simplify initialization logic using inquirer's confirm type
 
 ### Release 0.1.11
 
-* fix unnecessary $ operator being interpreted as literal
+* Fix unnecessary $ operator being interpreted as literal
 
 ### Release 0.1.10
 
-* modify git commit message prompt to use editor, for multiline commits
-* fix release notes adding too many spacings
+* Modify git commit message prompt to use editor, for multiline commits
+* Fix release notes adding too many spacings
 
 ### Release 0.1.7
 
-* clean README
+* Clean README
