@@ -14,7 +14,8 @@
     "configstore": "^5.0.0",
     "inquirer": "^7.0.0",
     "log-update": "^3.2.0",
-    "loglevel": "^1.6.3"
+    "loglevel": "^1.6.3",
+    "node-emoji": "^1.10.0"
   },
   "deprecated": false,
   "description": "Automatically updates version, pushes to git and publishes your npm package.",
@@ -35,7 +36,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.1.26",
+  "version": "0.1.27",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mithrayls/sempub.git"
