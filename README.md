@@ -47,43 +47,15 @@ Hints for commit messages [Seven Rules of a great Git commit message](https://ch
 
 ## Release Notes
 
+### Release 0.1.21
+
+aoneuh
+
+### Release 0.1.20
+
+addantehu
+
 ### Release 0.1.19
-
-simplify initialization logic using inquirer's confirm type
-
-
-### Release 0.1.18
-
-simplify initialization logic using inquirer's confirm type
-
-
-
-### Release 0.1.17
-
-simplify initialization logic using inquirer's confirm type
-
-
-### Release 0.1.16
-
-simplify initialization logic using inquirer's confirm type
-
-
-### Release 0.1.15
-
-simplify initialization logic using inquirer's confirm type
-
-
-### Release 0.1.14
-
-simplify initialization logic using inquirer's confirm type
-
-
-### Release 0.1.13
-
-simplify initialization logic using inquirer's confirm type
-
-
-### Release 0.1.12
 
 simplify initialization logic using inquirer's confirm type
 
@@ -91,12 +63,10 @@ simplify initialization logic using inquirer's confirm type
 
 fix unnecessary $ operator being interpreted as literal
 
-
 ### Release 0.1.10
 
 modify git commit message prompt to use editor, for multiline commits
 fix release notes adding too many spacings
-
 
 ### Release 0.1.9
 
@@ -105,6 +75,7 @@ release notes uses single spacing
 ### Release 0.1.8
 
 fixed release note position error
+
 
 ### Release 0.1.7
 
