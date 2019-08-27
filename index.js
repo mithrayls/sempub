@@ -44,7 +44,7 @@ async function sempub(passed_cli_message){
 		let current_version = config.version
 		publication.version = incrementVersion( current_version, type )
 
-				console.log(publication.version)
+		config.publication = publication
 
 		publication.confirm = await get.getConfirmation( prompt_confirmation, config)
 
