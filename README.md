@@ -35,7 +35,7 @@ sempub publish --message "commit message"
 
 ### Hint
 
-[Seven Rules of a great Git commit message](https://chris.beams.io/posts/git-commit/)
+Hints for commit messages [Seven Rules of a great Git commit message](https://chris.beams.io/posts/git-commit/)
 
 * Separate subject from body with a blank line
 * Limit the subject line to 50 characters
