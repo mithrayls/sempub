@@ -46,6 +46,10 @@ Hints for commit messages [Seven Rules of a great Git commit message](https://ch
 * Use the body to explain what and why vs. how
 
 ## Release Notes
+### Release 0.1.11
+
+fix unnecessary $ operator being interpreted as literal
+
 
 ### Release 0.1.10
 
@@ -60,8 +64,6 @@ release notes uses single spacing
 ### Release 0.1.8
 
 fixed release note position error
-
-## Release Notes
 
 ### Release 0.1.7
 
