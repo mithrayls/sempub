@@ -46,6 +46,47 @@ Hints for commit messages [Seven Rules of a great Git commit message](https://ch
 * Use the body to explain what and why vs. how
 
 ## Release Notes
+
+### Release 0.1.19
+
+simplify initialization logic using inquirer's confirm type
+
+
+### Release 0.1.18
+
+simplify initialization logic using inquirer's confirm type
+
+
+
+### Release 0.1.17
+
+simplify initialization logic using inquirer's confirm type
+
+
+### Release 0.1.16
+
+simplify initialization logic using inquirer's confirm type
+
+
+### Release 0.1.15
+
+simplify initialization logic using inquirer's confirm type
+
+
+### Release 0.1.14
+
+simplify initialization logic using inquirer's confirm type
+
+
+### Release 0.1.13
+
+simplify initialization logic using inquirer's confirm type
+
+
+### Release 0.1.12
+
+simplify initialization logic using inquirer's confirm type
+
 ### Release 0.1.11
 
 fix unnecessary $ operator being interpreted as literal
