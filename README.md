@@ -33,6 +33,11 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.0.40
+
+refactor
+
+
 ### Release 0.0.39
 
 refactor
