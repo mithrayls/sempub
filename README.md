@@ -39,57 +39,8 @@ sempub publish --message "commit message"
 
 version
 
-
-### Release 0.1.0
-
-path reference fixed
-
-
-### Release 0.0.50
-
-fixed path reference
-
-
-### Release 0.0.47
-
-testing
-
-
-### Release 0.0.46
-
-more helpful confirmation message
-
-
-### Release 0.0.45
-
-refactor
-
 ## Release Notes
 
-### Release 0.1.2
+### Release 0.1.7
 
-fixed release notes bug
-
-## Release Notes
-
-### Release 0.1.3
-
-another path bug
-
-## Release Notes
-
-### Release 0.1.4
-
-more path ref
-
-## Release Notes
-
-### Release 0.1.5
-
-include default config
-
-## Release Notes
-
-### Release 0.1.6
-
-include default config
+clean README
