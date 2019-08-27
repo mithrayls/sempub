@@ -47,44 +47,57 @@ sempub publish --message "commit message"
 - [ ] Streamline init
   - [ ] git init
   - [ ] npm init
-- [x] CLI markdown prompts
-- [ ] More Testing
-- [ ] Mocha
-- [ ] Linting
-- [ ] Flexible adapting CI/CD chain
-- [ ] Git push to multiple urls
-- [ ] Use alternate package manager
-- [ ] Code Complexity
-- [ ] UML Diagrams
+- [ ] Testing
+  - [ ] More Testing
+  - [ ] Mocha
+- [ ] Distribution
+  - [ ] Flexible adapting CI/CD chain
+  - [ ] Git push to multiple urls
+  - [ ] Use alternate package manager
+- [ ] Style
+  - [ ] Linting
+- [ ] Complexity
+  - [ ] Code Complexity
+  - [ ] UML Diagrams
+- [ ] Hints
+  - [x] CLI markdown prompts
+  - [ ] Make hints cli flag switchable
+  - [ ] Make hints for every prompt
+  - [ ] Toggle hints in init config
 
 ## Release Notes
 
+### Release 0.1.26
+
+* * added commit hint :grinnning:
+* * fixed release notes not creating list
+
 ### Release 0.1.25
 
-added CLI markdown prompt
+* added CLI markdown prompt
 
 ### Release 0.1.24
 
-added roadmap
-improved readme structure
+* added roadmap
+* improved readme structure
 
 ### Release 0.1.22
 
-fix release notes spacing bug
+* fix release notes spacing bug
 
 ### Release 0.1.19
 
-simplify initialization logic using inquirer's confirm type
+* simplify initialization logic using inquirer's confirm type
 
 ### Release 0.1.11
 
-fix unnecessary $ operator being interpreted as literal
+* fix unnecessary $ operator being interpreted as literal
 
 ### Release 0.1.10
 
-modify git commit message prompt to use editor, for multiline commits
-fix release notes adding too many spacings
+* modify git commit message prompt to use editor, for multiline commits
+* fix release notes adding too many spacings
 
 ### Release 0.1.7
 
-clean README
+* clean README
