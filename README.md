@@ -1,10 +1,20 @@
 # Sempub
+
+## Introduction
+
 *increments semantic version, pushes to git, and publishes to NPM*
 
 I DON'T RECOMMEND USING THIS YET! PLEASE WAIT FOR VERSION 1.0.0 !!!🚨⚠️🔥⚡🚨⚠️🔥⚡🚨⚠️🔥⚡
-IF YOU DO YOUR S WILL POTENTIALLY BREAK LOL 🔥
 
 If you are trying to get this working, you will most likely need to npm init and have your git remote set up already.
+
+## Contents
+
+* [Introduction](#introduction)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Release Notes](#release-notes)
+* [Roadmap](#roadmap)
 
 ## Installation
 
@@ -13,7 +23,6 @@ npm i sempub -g
 ```
 
 ## Usage
-
 
 ### Initialization
 
@@ -33,35 +42,31 @@ sempub publish
 sempub publish --message "commit message"
 ```
 
-### Hint
+## Roadmap
 
-Hints for commit messages [Seven Rules of a great Git commit message](https://chris.beams.io/posts/git-commit/)
-
-* Separate subject from body with a blank line
-* Limit the subject line to 50 characters
-* Capitalize the subject line
-* Do not end the subject line with a period
-* Use the imperative mood in the subject line
-* Wrap the body at 72 characters
-* Use the body to explain what and why vs. how
+- [ ] Streamline init
+  - [ ] git init
+  - [ ] npm init
+- [ ] CLI markdown prompts
+- [ ] More Testing
+- [ ] Mocha
+- [ ] Linting
+- [ ] Flexible adapting CI/CD chain
+- [ ] Git push to multiple urls
+- [ ] Use alternate package manager
+- [ ] Code Complexity
+- [ ] UML Diagrams
 
 ## Release Notes
 
-### Release 0.1.23
+### Release 0.1.24
 
-spacing
+added roadmap
+improved readme structure
 
 ### Release 0.1.22
 
-finally fixed release notes spacing bug
-
-### Release 0.1.21
-
-aoneuh
-
-### Release 0.1.20
-
-addantehu
+fix release notes spacing bug
 
 ### Release 0.1.19
 
@@ -75,14 +80,6 @@ fix unnecessary $ operator being interpreted as literal
 
 modify git commit message prompt to use editor, for multiline commits
 fix release notes adding too many spacings
-
-### Release 0.1.9
-
-release notes uses single spacing
-
-### Release 0.1.8
-
-fixed release note position error
 
 ### Release 0.1.7
 
