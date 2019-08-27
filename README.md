@@ -1,7 +1,8 @@
 # Sempub
 *increments semantic version, pushes to git, and publishes to NPM*
 
-I don't recommend using this yet. There still seem to be a lot of bugs.
+I DON'T RECOMMEND USING THIS YET! PLEASE WAIT FOR VERSION 1.0.0 !!!🚨⚠️🔥⚡🚨⚠️🔥⚡🚨⚠️🔥⚡
+IF YOU DO YOUR S WILL POTENTIALLY BREAK LOL 🔥
 
 ## Installation
 
@@ -29,6 +30,18 @@ sempub publish
 # will not prompt for commit message
 sempub publish --message "commit message"
 ```
+
+## Release Notes
+
+### Release 0.0.34
+
+refactor
+
+
+### Release 0.0.33
+
+refactor
+
 
 ### Release 0.0.29
 

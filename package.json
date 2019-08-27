@@ -11,6 +11,7 @@
     "ansi-colors": "^4.1.1",
     "caporal": "^1.3.0",
     "configstore": "^5.0.0",
+    "deepmerge": "^4.0.0",
     "inquirer": "^7.0.0",
     "loglevel": "^1.6.3",
     "read-pkg": "^5.2.0"
@@ -21,11 +22,20 @@
   "license": "MIT",
   "main": "index.js",
   "name": "sempub",
+  "keywords": [
+    "semantic versioning",
+    "npm",
+    "publish",
+    "workflow",
+    "utility",
+    "CI",
+    "CD"
+  ],
   "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.0.30",
+  "version": "0.0.34",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mithrayls/sempub.git"
@@ -35,5 +45,5 @@
   },
   "homepage": "https://github.com/mithrayls/sempub#readme",
   "readme": "ERROR: No README data found!",
-  "_id": "sempub@0.0.29"
+  "_id": "sempub@0.0.33"
 }
