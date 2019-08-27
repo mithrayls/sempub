@@ -33,67 +33,16 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.0.44
+
+refactor
+
+
 ### Release 0.0.43
 
 err message
-
-
 
 ### Release 0.0.42
 
 refactor
 
-
-### Release 0.0.41
-
-refactor
-
-
-### Release 0.0.40
-
-refactor
-
-
-### Release 0.0.39
-
-refactor
-
-
-### Release 0.0.38
-
-refactor
-
-
-
-### Release 0.0.37
-
-refactor
-
-
-### Release 0.0.36
-
-refactor
-
-
-### Release 0.0.35
-
-refactor
-
-
-### Release 0.0.34
-
-refactor
-
-
-### Release 0.0.33
-
-refactor
-
-
-### Release 0.0.29
-
-fixed release notes bug
-
-### Release 0.0.30
-
-made npm publish use public access flag by default

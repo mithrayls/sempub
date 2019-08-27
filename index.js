@@ -35,10 +35,10 @@ async function sempub(passed_cli_message){
 
 		let type		= await get.getType			( prompt_type, 		config )
 		let message = await get.getMessage	( prompt_message, passed_cli_message )
+		config.publication.message = message
 		let notes 	= await get.getNotes		( prompt_notes, 	config )
 
 		publication.type		= type
-		publication.message	= message
 		publication.notes		= notes
 
 		let current_version = config.version
