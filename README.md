@@ -63,3 +63,9 @@ more helpful confirmation message
 ### Release 0.0.45
 
 refactor
+
+## Release Notes
+
+### Release 0.1.2
+
+fixed release notes bug
