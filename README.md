@@ -4,6 +4,8 @@
 I DON'T RECOMMEND USING THIS YET! PLEASE WAIT FOR VERSION 1.0.0 !!!🚨⚠️🔥⚡🚨⚠️🔥⚡🚨⚠️🔥⚡
 IF YOU DO YOUR S WILL POTENTIALLY BREAK LOL 🔥
 
+If you are trying to get this working, you will most likely need to npm init and have your git remote set up already.
+
 ## Installation
 
 ```bash
@@ -32,6 +34,11 @@ sempub publish --message "commit message"
 ```
 
 ## Release Notes
+
+### Release 0.0.45
+
+refactor
+
 
 ### Release 0.0.44
 

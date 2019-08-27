@@ -28,7 +28,7 @@ async function sempub(passed_cli_message){
 
 		let valid_commit_message = validateCommitMessage(passed_cli_message)
 
-		let prompt_type					= ['patch','minor','major'].indexOf(publication.release_type) === -1
+		let prompt_type					= ['patch','minor','major'].indexOf(publication.default_release_type) === -1
 		let prompt_message			= publication.push_to_git 						&& !valid_commit_message
 		let prompt_notes 				= publication.add_release_notes
 		let prompt_confirmation = publication.require_confirmation
@@ -43,6 +43,8 @@ async function sempub(passed_cli_message){
 
 		let current_version = config.version
 		publication.version = incrementVersion( current_version, type )
+
+				console.log(publication.version)
 
 		publication.confirm = await get.getConfirmation( prompt_confirmation, config)
 
