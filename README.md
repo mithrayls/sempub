@@ -35,6 +35,11 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.8
+
+fixed release note position error
+
+
 ### Release 0.1.1
 
 version
