@@ -1,6 +1,6 @@
 #! /usr/bin/node
 
-const readPackageJson = require('read-pkg')
+const config = require('../package.json')
 const prog = require('caporal');
 const sempub = require('../index.js')
 const initConfig = require('../lib/init.js')
@@ -35,5 +35,4 @@ async function startCLI(config){
 	prog.parse(process.argv)
 }
 
-readPackageJson()
-	.then( startCLI )
+startCLI(config)
