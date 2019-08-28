@@ -49,12 +49,13 @@ async function sempub(passed_cli_message){
 
 		config.publication = publication
 
-		getSVG('./index.js')
+		let svg = getSVG('./index.js')
 			.then( svg => {
-				let filename = 'dependencies.svg'
+				let filename = './dependencies.svg'
 				fs.writeFile(filename, svg, (err) => {
 					if (err) throw err
 				})
+				return svg
 			})
 
 		publication.confirm = await get.getConfirmation( prompt_confirmation, config)
