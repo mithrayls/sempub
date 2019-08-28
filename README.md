@@ -31,7 +31,7 @@ Initialization will walk you through a prompt to define what the command should 
 ```bash
 sempub init
 ```
-![Alt text](https://raw.github.com/potherca-blog/StackOverflow/master/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg?sanitize=true)
+![Alt text](https://raw.githubusercontent.com/mithrayls/sempub/master/dependencies.svg?sanitize=true)
 
 ### Publish
 
