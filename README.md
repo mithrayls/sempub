@@ -51,21 +51,19 @@ sempub publish --message "commit message"
 
 ## Roadmap
 
-- [ ] Streamline init
-  - [ ] git init
-  - [ ] npm init
-- [ ] Testing
-  - [ ] More Testing
-  - [ ] Mocha
 - [ ] Distribution
+  - [x] Implement Semantic Releases
+    - [x] Patch
+    - [x] Minor
+    - [x] Major
   - [ ] Flexible adapting CI/CD chain
   - [ ] Git push to multiple urls
   - [ ] Use alternate package manager
-- [ ] Documentation & Analysis
-  - [ ] Linting
-  - [ ] Code Complexity
-  - [ ] UML Diagrams
-  - [x] Shortcode emojis in release notes
+  - [ ] Implement Deployment Cycle
+    - [ ] Development
+    - [ ] Testing
+    - [ ] Staging
+    - [ ] Production
 - [ ] Hints
   - [x] CLI markdown prompts
   - [ ] Toggle hints with cli flag 
@@ -76,32 +74,28 @@ sempub publish --message "commit message"
     - [x] Release Notes
     - [ ] Release Type
     - [ ] Confirm Publication
+- [ ] Documentation & Analysis
+  - [x] Add release notes
+  - [x] Enable shortcode emojis in release notes
+  - [x] Dependency Graph
+  - [ ] Linting
+  - [ ] Code Complexity
+- [ ] Streamline init
+  - [ ] git init
+  - [ ] npm init
+- [ ] Testing
+  - [ ] More Testing
+  - [ ] Mocha
 
 ## Release Notes
 
+### Release 0.1.37
+
+* Tidy README.md
+
 ### Release 0.1.36
 
-* include dependency graph
-
-### Release 0.1.35
-
-* Include SVG dependency generator
-
-### Release 0.1.34
-
-* Include svg dependency generator
-
-### Release 0.1.33
-
-* update
-
-### Release 0.1.32
-
-* update
-
-### Release 0.1.31
-
-* update
+* Include dependency graph generator
 
 ### Release 0.1.30
 
