@@ -31,7 +31,6 @@ Initialization will walk you through a prompt to define what the command should 
 ```bash
 sempub init
 ```
-![Alt text](https://raw.githubusercontent.com/mithrayls/sempub/master/dependencies.svg?sanitize=true)
 
 ### Publish
 
@@ -42,6 +41,13 @@ sempub publish
 # will not prompt for commit message
 sempub publish --message "commit message"
 ```
+
+## Analyze Project
+
+* Dependency Graph
+* Complexity Analysis(to come)
+
+![Alt text](https://raw.githubusercontent.com/mithrayls/sempub/master/dependencies.svg?sanitize=true)
 
 ## Roadmap
 
@@ -72,6 +78,10 @@ sempub publish --message "commit message"
     - [ ] Confirm Publication
 
 ## Release Notes
+
+### Release 0.1.36
+
+* include dependency graph
 
 ### Release 0.1.35
 
