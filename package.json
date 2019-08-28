@@ -36,7 +36,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.1.32",
+  "version": "0.1.33",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mithrayls/sempub.git"
@@ -44,17 +44,5 @@
   "bugs": {
     "url": "https://github.com/mithrayls/sempub/issues"
   },
-  "homepage": "https://github.com/mithrayls/sempub#readme",
-  "readme": "ERROR: No README data found!",
-  "publication": {
-    "push_to_git": true,
-    "require_confirmation": true,
-    "default_release_type": "patch",
-    "add_release_notes": true,
-    "message": "another path bug",
-    "type": "patch",
-    "notes": "another path bug\n",
-    "version": "0.1.3",
-    "confirm": true
-  }
+  "homepage": "https://github.com/mithrayls/sempub#readme"
 }
