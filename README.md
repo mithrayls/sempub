@@ -54,11 +54,11 @@ sempub publish --message "commit message"
   - [ ] Flexible adapting CI/CD chain
   - [ ] Git push to multiple urls
   - [ ] Use alternate package manager
-- [ ] Style
+- [ ] Documentation & Analysis
   - [ ] Linting
-- [ ] Complexity
   - [ ] Code Complexity
   - [ ] UML Diagrams
+  - [x] Shortcode emojis in release notes
 - [ ] Hints
   - [x] CLI markdown prompts
   - [ ] Make hints cli flag switchable
@@ -66,6 +66,10 @@ sempub publish --message "commit message"
   - [ ] Toggle hints in init config
 
 ## Release Notes
+
+### Release 0.1.29
+
+* Tidy readme
 
 ### Release 0.1.28
 
