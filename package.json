@@ -16,7 +16,8 @@
     "inquirer": "^7.0.0",
     "log-update": "^3.2.0",
     "loglevel": "^1.6.3",
-    "node-emoji": "^1.10.0"
+    "node-emoji": "^1.10.0",
+    "semver": "^6.3.0"
   },
   "deprecated": false,
   "description": "Automatically updates version, pushes to git and publishes your npm package.",

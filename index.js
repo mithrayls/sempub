@@ -9,8 +9,9 @@ const executePublish = require('./lib/executePublish.js')
 const git = require('./lib/git/git.js')
 const npmPublish = require('./lib/npm/npmPublish.js')
 const get = require('./lib/get.js')
-const incrementVersion = require('./lib/incrementVersion.js')
+//const incrementVersion = require('./lib/incrementVersion.js')
 const getSVG = require('./lib/getDependenciesSVG.js')
+
 
 async function sempub(passed_cli_message){
 
@@ -43,7 +44,9 @@ async function sempub(passed_cli_message){
 		publication.notes		= notes
 
 		let current_version = config.version
-		publication.version = incrementVersion( current_version, type )
+//		publication.version = incrementVersion( current_version, type )
+			publication.version = semver.inc( current_version, type )
+		
 
 		config.publication = publication
 
