@@ -107,7 +107,7 @@ sempub publish --message "commit message"
 
 ### Release 0.1.27
 
-* Fix emoji shortcodes not working 😀
+* Fix emoji shortcodes not working :smiling:
 
 ### Release 0.1.26
 
