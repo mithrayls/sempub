@@ -89,6 +89,10 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.41
+
+* Tidy Readme
+
 ### Release 0.1.40
 
 * Tidy readme
@@ -115,7 +119,7 @@ sempub publish --message "commit message"
 
 ### Release 0.1.27
 
-* Fix emoji shortcodes not working :smiling:
+* Fix emoji shortcodes not working 😀
 
 ### Release 0.1.26
 
