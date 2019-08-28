@@ -44,10 +44,10 @@ sempub publish --message "commit message"
 
 ## Analyze Project
 
-* Dependency Graph
 * Complexity Analysis(to come)
+* Dependency Graph. Automatically generated in your project root🔥🔥!! However make sure you have `graphviz` installed otherwise the graph will use a less aesthetic fallback!🙃😏😒😌😮😯😲
 
-![Alt text](https://raw.githubusercontent.com/mithrayls/sempub/master/dependencies.svg?sanitize=true)
+![Project Dependency Graph](https://raw.githubusercontent.com/mithrayls/sempub/master/dependencies.svg?sanitize=true)
 
 ## Roadmap
 
