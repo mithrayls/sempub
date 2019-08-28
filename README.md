@@ -45,7 +45,7 @@ sempub publish --message "commit message"
 ## Analyze Project
 
 * Complexity Analysis(to come)
-* Dependency Graph. Automatically generated in your project root🔥🔥!! However make sure you have `graphviz` installed otherwise the graph will use a less aesthetic fallback!🙃😏😒😌😮😯😲
+* Dependency Graph. Automatically generated in your project root🔥🔥!! However make sure you have `graphviz` installed otherwise the graph will use a less aesthetic fallback 🙃😏😒😌😮😯😲!!
 
 ![Project Dependency Graph](https://raw.githubusercontent.com/mithrayls/sempub/master/dependencies.svg?sanitize=true)
 
@@ -88,6 +88,10 @@ sempub publish --message "commit message"
   - [ ] Mocha
 
 ## Release Notes
+
+### Release 0.1.49
+
+* Update README.md with more emojis because it's necessary
 
 ### Release 0.1.48
 
