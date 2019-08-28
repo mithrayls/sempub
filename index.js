@@ -53,7 +53,7 @@ async function sempub(passed_cli_message){
 				fs.writeFile(filename, svg, (err) => {
 					if (err) throw err
 				})
-			}
+			})
 
 		publication.confirm = await get.getConfirmation( prompt_confirmation, config)
 

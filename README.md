@@ -72,6 +72,10 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.35
+
+* Include SVG dependency generator
+
 ### Release 0.1.34
 
 * Include svg dependency generator
