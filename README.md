@@ -89,6 +89,10 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.43
+
+* Use semver and npm version
+
 ### Release 0.1.36
 
 * Include dependency graph generator
