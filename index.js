@@ -9,7 +9,7 @@ const executePublish = require('./lib/executePublish.js')
 const git = require('./lib/git/git.js')
 const npmPublish = require('./lib/npm/npmPublish.js')
 const get = require('./lib/get.js')
-const getSVG = require('./lib/getDependenciesSVG.js')
+const writeSVG = require('./lib/getDependenciesSVG.js')
 
 const semver = require('semver')
 
@@ -49,15 +49,19 @@ async function sempub(passed_cli_message){
 
 		config.publication = publication
 
-		let svg = getSVG('./index.js')
+		let output_image_path = './dependencies.svg'
+		output_image_path = await writeSVG( './index.js', output_image_path )
+
+		console.log(output_image_path)
+				/*
 			.then( svg => {
 				let filename = './dependencies.svg'
 				fs.writeFile(filename, svg, (err) => {
 					if (err) throw err
 				})
-				return svg
+				return output_image_path
 			})
-
+*/
 		publication.confirm = await get.getConfirmation( prompt_confirmation, config)
 
 

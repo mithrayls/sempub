@@ -8,7 +8,8 @@
     "sempub": "./bin/index.js"
   },
   "dependencies": {
-    "@mithray/analyze-js": "0.0.12",
+    "@mithray/analyze-js": "0.0.13",
+    "@mithray/md-terminal": "0.0.1",
     "ansi-colors": "^4.1.1",
     "caporal": "^1.3.0",
     "cli-marked": "^4.9.14",

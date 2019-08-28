@@ -89,6 +89,10 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.48
+
+* Graphviz with fallback and hints
+
 ### Release 0.1.47
 
 * Clean
