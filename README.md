@@ -89,6 +89,10 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.44
+
+* test
+
 ### Release 0.1.43
 
 * Use semver and npm version
