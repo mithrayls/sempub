@@ -89,22 +89,6 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
-### Release 0.1.41
-
-* Tidy Readme
-
-### Release 0.1.40
-
-* Tidy readme
-
-### Release 0.1.39
-
-* Tidy readme
-
-### Release 0.1.37
-
-* Tidy README.md
-
 ### Release 0.1.36
 
 * Include dependency graph generator
