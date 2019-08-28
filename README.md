@@ -89,6 +89,10 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.38
+
+* nh
+
 ### Release 0.1.37
 
 * Tidy README.md
