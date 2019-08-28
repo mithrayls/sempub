@@ -67,6 +67,10 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.30
+
+* Trim whitespace from git commit
+
 ### Release 0.1.29
 
 * Tidy readme
