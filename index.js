@@ -10,6 +10,7 @@ const git = require('./lib/git/git.js')
 const npmPublish = require('./lib/npm/npmPublish.js')
 const get = require('./lib/get.js')
 const incrementVersion = require('./lib/incrementVersion.js')
+const getSVG = require('./lib/getDependenciesSVG.js')
 
 async function sempub(passed_cli_message){
 
@@ -46,6 +47,14 @@ async function sempub(passed_cli_message){
 
 		config.publication = publication
 
+		getSVG('./index.js')
+			.then( svg => {
+				let filename = 'dependencies.svg'
+				fs.writeFile(filename, svg, (err) => {
+					if (err) throw err
+				})
+			}
+
 		publication.confirm = await get.getConfirmation( prompt_confirmation, config)
 
 
@@ -53,6 +62,7 @@ async function sempub(passed_cli_message){
 	/*
 	 * Execute.
 	 */
+
 
 		let completion = publication.confirm	? await executePublish(publication) : "Publication cancelled."
 
