@@ -61,23 +61,32 @@ sempub publish --message "commit message"
   - [x] Shortcode emojis in release notes
 - [ ] Hints
   - [x] CLI markdown prompts
-  - [ ] Make hints cli flag switchable
+  - [ ] Toggle hints with cli flag 
+  - [ ] Toggle hints with init config
   - [ ] Make hints for every prompt
-  - [ ] Toggle hints in init config
+    - [ ] Initialize
+    - [x] Git commit message
+    - [x] Release Notes
+    - [ ] Release Type
+    - [ ] Confirm Publication
 
 ## Release Notes
 
+### Release 0.1.32
+
+* update
+
+### Release 0.1.31
+
+* update
+
 ### Release 0.1.30
 
-* Trim whitespace from git commit
-
-### Release 0.1.29
-
-* Tidy readme
+* Trim whitespace from outgoing git commit messages
 
 ### Release 0.1.28
 
-* tidy readme
+* Tidy README.md
 
 ### Release 0.1.27
 
@@ -95,7 +104,7 @@ sempub publish --message "commit message"
 ### Release 0.1.24
 
 * Add roadmap
-* Improve readme structure
+* Improve README.md structure
 
 ### Release 0.1.22
 
@@ -116,4 +125,4 @@ sempub publish --message "commit message"
 
 ### Release 0.1.7
 
-* Clean README
+* Clean README.md
