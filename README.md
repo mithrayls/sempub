@@ -89,17 +89,14 @@ sempub publish --message "commit message"
 
 ## Release Notes
 
+### Release 0.1.46
+
+* Upgrade dependency
+
 ### Release 0.1.45
 
-* Use semver
-
-### Release 0.1.44
-
-* test
-
-### Release 0.1.43
-
 * Use semver and npm version
+* Remove unneeded code
 
 ### Release 0.1.36
 
