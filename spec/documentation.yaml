@@ -1,0 +1,75 @@
+#git:
+#  gitRepoExists
+#  gitInit:
+#    type: 
+#  gitCreateRepo
+#  gitAdd
+#  gitCommit
+##################
+#  Options
+##################
+
+#------- test types ---------
+#
+#  should be / expect to be
+#
+#  a <type>
+#  equal <value>
+#  have_length_of <integer>
+#  have_property <string>
+#  instance_of <>
+#
+
+default_test_path: "lib"
+
+tests:
+
+  Spec:
+    CreateMarkdownRoadmapFromRoadmapYaml:
+      description: ""
+      testee: ""
+      condition: ""
+      value: ""
+    CreateReleaseNotes: 
+      description: ""
+      testee: ""
+      condition: ""
+      value: ""
+    ShortcodeEmojis:
+      description: "Enable shortcode emojis in release notes"
+      testee: ""
+      condition: ""
+      value: ""
+    WriteDependencyGraph:
+      With Graphviz:
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""
+      With viz.js fallback:
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""
+      Automatically add graph to README.md:
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""
+      PureJsDependencyGraphs: 
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""
+    Linting:
+    CodeComplexity:
+      HalsteadComplexity:
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""
+      CyclomaticComplexity:
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""

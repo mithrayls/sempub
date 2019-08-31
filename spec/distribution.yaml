@@ -1,0 +1,42 @@
+#git:
+#  gitRepoExists
+#  gitInit:
+#    type: 
+#  gitCreateRepo
+#  gitAdd
+#  gitCommit
+##################
+#  Options
+##################
+
+#------- test types ---------
+#
+#  should be / expect to be
+#
+#  a <type>
+#  equal <value>
+#  have_length_of <integer>
+#  have_property <string>
+#  instance_of <>
+#
+
+default_test_path: "lib"
+
+tests:
+
+  Distribution:
+    Implement Semantic Releases:
+      Patch:
+      Minor:
+      Major:
+      Pre-Patch:
+      Pre-Minor:
+      Pre-Major:
+    Flexible adapting CI/CD chain:
+    Git push to multiple urls:
+    Use alternate package manager:
+    Implement Deployment Cycle:
+      Development:
+      Testing:
+      Staging:
+      Production:

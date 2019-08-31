@@ -1,38 +1,15 @@
 #! /usr/bin/node
 
+const program = require('commander')
 const config = require('../package.json')
-const prog = require('caporal');
 const sempub = require('../index.js')
-const initConfig = require('../lib/init.js')
 
+program
 
-async function init( args, options, logger){
-	initConfig()
-}
+	.version(config.version)
 
+	.command( 'init')
+	.description('initialize configuration')
+	.action( sempub.init )
 
-async function publish( args, options, logger){
-	if ( options.message ) {
-		let message = options.message
-		sempub(message)
-	} else {
-		sempub('')
-	}
-}
-
-
-async function startCLI(config){
-	prog
-		.version(config.version)
-
-		.command( 'init', 'initialize configuration')
-		.action( init )
-
-		.command( 'publish', 'publish package')
-		.action( publish )
-		.option( '--message <message>', 'git commit message')
-
-	prog.parse(process.argv)
-}
-
-startCLI(config)
+program.parse(process.argv)

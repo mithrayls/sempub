@@ -1,0 +1,36 @@
+#git:
+#  gitRepoExists
+#  gitInit:
+#    type: 
+#  gitCreateRepo
+#  gitAdd
+#  gitCommit
+##################
+#  Options
+##################
+
+#------- test types ---------
+#
+#  should be / expect to be
+#
+#  a <type>
+#  equal <value>
+#  have_length_of <integer>
+#  have_property <string>
+#  instance_of <>
+#
+
+default_test_path: "lib"
+
+tests:
+
+  Hints:
+    CLI markdown prompts:
+    Toggle hints with cli flag :
+    Toggle hints with init config:
+    Make hints for every prompt:
+      Initialize:
+      Git commit message:
+      Release Notes:
+      Release Type:
+      Confirm Publication:

@@ -1,0 +1,42 @@
+#git:
+#  gitRepoExists
+#  gitInit:
+#    type: 
+#  gitCreateRepo
+#  gitAdd
+#  gitCommit
+##################
+#  Options
+##################
+
+#------- test types ---------
+#
+#  should be / expect to be
+#
+#  a <type>
+#  equal <value>
+#  have_length_of <integer>
+#  have_property <string>
+#  instance_of <>
+#
+
+default_test_path: "lib"
+
+tests:
+
+  initialize:
+    npmRepoExists:
+      description: "Check if npm repo exists."
+      testee: $npmRepoExists()
+      condition: "equal"
+      value: true
+    npmInitRepo:
+      description: "Create npm repo"
+      testee: $npmInit()
+      condition: "have.property"
+      value: "name"
+    specDirExists:
+      description: "Check if spec directory exists"
+      testee: $specDirExists()
+      condition: "equal"
+      value: true
