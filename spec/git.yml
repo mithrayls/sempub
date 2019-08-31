@@ -1,0 +1,47 @@
+#git:
+#  gitRepoExists
+#  gitInit:
+#    type: 
+#  gitCreateRepo
+#  gitAdd
+#  gitCommit
+##################
+#  Options
+##################
+
+#------- test types ---------
+#
+#  should be / expect to be
+#
+#  a <type>
+#  equal <value>
+#  have_length_of <integer>
+#  have_property <string>
+#  instance_of <>
+#
+
+default_test_path: "lib"
+
+tests:
+
+  git:
+    init:
+      description: "Initialize a git repository"
+      command: !exec("git init")
+
+    initGitIgnore:
+      description: "Initialize a .gitignore file"
+      command: !exec("echo 'node_modules' >> .gitignore")
+    add:
+      description: "Add files to git repo"
+      command: !exec("git add .")
+    commit: 
+      description: "Commit changes to a git repository"
+      command: !exec("git commit -m %(message)s")
+    createGithubRepo: 
+      description: "Remotely create a Github repository"
+      command: !
+    remoteAddOrigin: "git remote add origin git@github.com:${github_username}/${repo_name}.git"
+      description:
+      command:
+    push: "git push -u origin master"

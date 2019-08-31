@@ -27,49 +27,53 @@ tests:
   Spec:
     CreateMarkdownRoadmapFromRoadmapYaml:
       description: ""
-      testee: ""
+      command: ""
       condition: ""
       value: ""
     CreateReleaseNotes: 
       description: ""
-      testee: ""
+      command: ""
       condition: ""
       value: ""
     ShortcodeEmojis:
       description: "Enable shortcode emojis in release notes"
-      testee: ""
+      command: ""
       condition: ""
       value: ""
     WriteDependencyGraph:
       With Graphviz:
         description: ""
-        testee: ""
+        command: ""
         condition: ""
         value: ""
       With viz.js fallback:
         description: ""
-        testee: ""
+        command: ""
         condition: ""
         value: ""
       Automatically add graph to README.md:
         description: ""
-        testee: ""
+        command: ""
         condition: ""
         value: ""
       PureJsDependencyGraphs: 
         description: ""
-        testee: ""
+        command: ""
         condition: ""
         value: ""
     Linting:
     CodeComplexity:
       HalsteadComplexity:
         description: ""
-        testee: ""
+        command: ""
         condition: ""
         value: ""
       CyclomaticComplexity:
         description: ""
-        testee: ""
+        command: ""
         condition: ""
         value: ""
+        documentation:
+    initReadme:
+      command: 'echo "# %(repo_name)" >> README.md'
+

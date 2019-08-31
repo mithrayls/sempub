@@ -1,0 +1,42 @@
+#git:
+#  gitRepoExists
+#  gitInit:
+#    type: 
+#  gitCreateRepo
+#  gitAdd
+#  gitCommit
+##################
+#  Options
+##################
+
+#------- test types ---------
+#
+#  should be / expect to be
+#
+#  a <type>
+#  equal <value>
+#  have_length_of <integer>
+#  have_property <string>
+#  instance_of <>
+#
+
+default_test_path: "lib"
+
+tests:
+
+  npm:
+    npmRepoExists:
+      description: "Check if npm repo exists."
+      command: $npmRepoExists()
+      condition: "equal"
+      value: true
+    npmInitRepo:
+      description: "Create npm repo"
+      command: $exec('npm init -y')
+      condition: "Should not fail"
+      value: ""
+    npmPublish:
+      description:
+      command: $exec('npm publish --access public')
+      condition: "Should not fail"
+      value: ""

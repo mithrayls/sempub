@@ -1,9 +1,5 @@
 {
-  "author": {
-    "name": "mithrayls",
-    "email": "mithray@protonmail.com",
-    "url": "https://mithrayls.github.io/"
-  },
+  "author": "mithrayls <mithray@protonmail.com> (https://mithrayls.github.io/)",
   "bin": {
     "sempub": "./bin/index.js"
   },
@@ -53,5 +49,9 @@
   "bugs": {
     "url": "https://github.com/mithrayls/sempub/issues"
   },
-  "homepage": "https://github.com/mithrayls/sempub#readme"
+  "homepage": "https://github.com/mithrayls/sempub#readme",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  }
 }
