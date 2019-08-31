@@ -3,7 +3,7 @@ git:
     - "git init"
     - "echo 'node_modules' >> .gitignore"
   add: "git add"
-  commit: "git commit -m %(message)"
+  commit: "git commit -m %(message)s"
   createGitHub: 
     - 'fetch "${github_username}" https://api.github.com/user/repos -d "{\"name\":\"$repo_name\"}"'
   remoteAddOrigin: "git remote add origin git@github.com:${github_username}/${repo_name}.git"
@@ -14,4 +14,4 @@ npm:
   publish: 'npm publish --access public'
 
 documentation:
-  init: 'echo "# ${repo_name}" >> README.md'
+  init: 'echo "# %(repo_name)" >> README.md'
