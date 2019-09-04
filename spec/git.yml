@@ -87,14 +87,15 @@ api:
       func_name: exec
       params_user:
       - name: message
+        description: A commit message
         type: string
         default: null
       params_internal: 
       - name: command
         type: string
-        default: git commit -m %s
+        default: git commit -m "${message}"
       tests:
-      - parameters: { command: "git commit -m %s" }
+      - parameters: { command: "git commit -m message" }
         condition: Should not fail
 
 
