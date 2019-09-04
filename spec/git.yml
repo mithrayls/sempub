@@ -21,6 +21,7 @@
 #
 
 path_prefix: "lib"
+api_name: git
 
 api:
 
@@ -103,14 +104,33 @@ api:
     # Distribution #
     # ------------ #
 
-#    createGithubRepo:
-#       name: createGithubRepo 
-#      description: "Remotely create a Github repository"
-#      function: exec
-#      parameter_desc: '{object} [{ command="curl -u '%s' https://api.github.com/user/repos -d '{\"name\":\"%s\"}'" }]'
-#      tests:
-#      - parameters: { command: "curl -u '%s' https://api.github.com/user/repos -d '{\"name\":\"%s\"}'" }
-#        condition: Should not fail
+    createGithubRepo:
+      name: createGithubRepo 
+      description: Remotely create a Github repository
+      func_name: exec
+      params_user:
+      - name: user
+        description: Github username
+        type: string
+        default: null
+      - name: name
+        description: The name of the github repo you wish to create
+        type: string
+        default: null
+      - name: token
+        description: Github token for accessing API
+        type: string
+        default: null
+      params_internal:
+      - name: command
+        description: Currently requires curl to work
+        type: string
+        default: curl -u '${user}:${token}' https://api.github.com/user/repos -d '{"name":"${repo_name}"}'
+      tests:
+      - params_user:
+          user: 'some_random_username'
+          repo: 'some_repo_name'
+        condition: Should not fail
 #
 #    remoteAddOrigin: 
 #       name: remoteAddOrigin
@@ -122,14 +142,19 @@ api:
 #      - parameters: { command: "git remote add origin git@github.com:%(github_username)s/%(repo_name)s.git" }
 #        condition: 'should not fail'
 #
-#    gitPush: 
-#           name: gitPush
-#      description: "Pushes to repository"
-#      function: exec("git push -u origin master")
-#      parameter_desc: '{object} [{ command="" }]'
-#      tests:
-#      - parameters: { command: "./spec/api.yml" }
-#        condition: 'should not fail'
+    gitPush: 
+      name: gitPush
+      description: "Pushes to repository"
+      func_name: exec
+      params_user:
+      params_internal:
+      - name: command
+        description:
+        type: string
+        default: git push -u origin master
+      tests:
+      - parameters: { command: "./spec/api.yml" }
+        condition: 'should not fail'
 #
 #        #    createGitlabRepo:
 #               name: createGitlabRepo

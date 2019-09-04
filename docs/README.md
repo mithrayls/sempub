@@ -2,7 +2,7 @@
 
 ## Introduction
 
-*increments semantic version, pushes to git, and publishes to NPM*
+_increments semantic version, pushes to git, and publishes to NPM_
 
 I DON'T RECOMMEND USING THIS YET! PLEASE WAIT FOR VERSION 1.0.0 !!!🚨⚠️🔥⚡🚨⚠️🔥⚡🚨⚠️🔥⚡
 
@@ -10,12 +10,12 @@ If you are trying to get this working, you will most likely need to npm init and
 
 ## Contents
 
-* [Introduction](#introduction)
-* [Contents](#contents)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Release Notes](#release-notes)
-* [Roadmap](#roadmap)
+-   [Introduction](#introduction)
+-   [Contents](#contents)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Release Notes](#release-notes)
+-   [Roadmap](#roadmap)
 
 ## Installation
 
@@ -45,13 +45,15 @@ sempub publish --message "commit message"
 
 ## Analyze Project
 
-* Complexity Analysis(to come)
-* Dependency Graph. Automatically generated in your project root🔥🔥!! However make sure you have `graphviz` installed otherwise the graph will use a less aesthetic fallback 🙃😏😒😌😮😯😲!!
+-   Complexity Analysis(to come)
+-   Dependency Graph. Automatically generated in your project root🔥🔥!! However make sure you have `graphviz` installed otherwise the graph will use a less aesthetic fallback 🙃😏😒😌😮😯😲!!
 
 ![Project Dependency Graph](https://raw.githubusercontent.com/mithrayls/sempub/master/dependencies.svg?sanitize=true)
 
-$$$ API
+[github tokens]: https://github.com/settings/tokens
 
-$$$ Roadmap
+$$
+$$
 
-$$$ Release Notes
+$$
+$$

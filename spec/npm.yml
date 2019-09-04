@@ -20,23 +20,46 @@
 #  instance_of <>
 #
 
-default_test_path: "lib"
+path_prefix: "lib"
+api_name: npm
 
-tests:
+api:
 
-  npm:
     npmRepoExists:
-      description: "Check if npm repo exists."
-      command: $npmRepoExists()
-      condition: "equal"
-      value: true
+      name: npmRepoExists
+      description: Check if npm repo exists
+      func_name: exec
+      params_internal: 
+      - name: command
+        type: string
+        default: if [ -f "./package.json" ]; then echo "true"; else echo "false";fi
+      tests:
+      - parameters: 
+          command: if [ -f "./package.json" ]; then echo "true"; else echo "false";fi
+        condition: Should equal "true"
+
     npmInitRepo:
-      description: "Create npm repo"
-      command: $exec('npm init -y')
-      condition: "Should not fail"
-      value: ""
+      name: npmInitRepo
+      description: Initialize an npm project
+      func_name: exec
+      params_internal: 
+      - name: command
+        type: string
+        default: npm init -y
+      tests:
+      - parameters: 
+          command: npm init -y
+        condition: Should not fail
+
     npmPublish:
-      description:
-      command: $exec('npm publish --access public')
-      condition: "Should not fail"
-      value: ""
+      name: npmPublish
+      description: Publish an npm package
+      func_name: exec
+      params_internal: 
+      - name: command
+        type: string
+        default: npm publish --access public
+      tests:
+      - parameters: 
+          command: npm publish --access public
+        condition: Should not fail
