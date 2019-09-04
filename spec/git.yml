@@ -20,28 +20,114 @@
 #  instance_of <>
 #
 
-default_test_path: "lib"
+path_prefix: "lib"
 
-tests:
+api:
 
-  git:
-    init:
+    # -------------- #
+    # Initialization #
+    # -------------- #
+    
+    gitRepoExists:
+      name:           gitRepoExists
+      description:    "Check if git repository exists"
+      func_name:       exec
+      param_expl:
+      param_impl: 
+      - "{object} options"
+      - "{string} [ options.command='git rev-parse --is-inside-work-tree' ]"
+      tests:
+      - parameters: 
+          command: "git rev-parse --is-inside-work-tree"
+        condition: Should not fail
+
+    gitInit:
+      name: gitInit
       description: "Initialize a git repository"
-      command: !exec("git init")
+      func_name:  exec
+      param_expl:
+      param_impl: 
+      - "{object} options"
+      - "{string} [ options.command='git init' ]"
+      tests:
+      - parameters: { command: "git init" }
+        condition: Should not fail
 
     initGitIgnore:
+      name: initGitIgnore
       description: "Initialize a .gitignore file"
-      command: !exec("echo 'node_modules' >> .gitignore")
-    add:
+      func_name: exec
+      param_expl:
+      param_impl: 
+      - "{object} options"
+      - "{string} [ options.command='echo node_modules >> .gitignore' ]"
+      tests:
+      - parameters: { command: "echo 'node_modules' >> .gitignore" }
+        condition: Should not fail
+
+    gitAdd:
+      name: gitAdd
       description: "Add files to git repo"
-      command: !exec("git add .")
-    commit: 
+      func_name: exec
+      param_expl:
+      param_impl: 
+      - "{object} options"
+      - "{string} [ options.command='git add .' ]"
+      tests:
+      - parameters: { command: "git add ." }
+        condition: Should not fail
+
+    gitCommit: 
+      name: gitCommit
       description: "Commit changes to a git repository"
-      command: !exec("git commit -m %(message)s")
-    createGithubRepo: 
-      description: "Remotely create a Github repository"
-      command: !
-    remoteAddOrigin: "git remote add origin git@github.com:${github_username}/${repo_name}.git"
-      description:
-      command:
-    push: "git push -u origin master"
+      func_name: exec
+      param_expl: "{string} [ message ]"
+      param_impl: 
+      - "{object} options"
+      - "{string} [ options.command='git commit -m %s' ]"
+      tests:
+      - parameters: { command: "git commit -m %s" }
+        condition: Should not fail
+
+
+    # ------------ #
+    # Distribution #
+    # ------------ #
+
+#    createGithubRepo:
+#       name: createGithubRepo 
+#      description: "Remotely create a Github repository"
+#      function: exec
+#      parameter_desc: '{object} [{ command="curl -u '%s' https://api.github.com/user/repos -d '{\"name\":\"%s\"}'" }]'
+#      tests:
+#      - parameters: { command: "curl -u '%s' https://api.github.com/user/repos -d '{\"name\":\"%s\"}'" }
+#        condition: Should not fail
+#
+#    remoteAddOrigin: 
+#       name: remoteAddOrigin
+#      description: "Adds a remote repository"
+#      function: exec
+#      parameter_desc: '{object} [{ command="git remote add origin git@github.com:%(github_username)s/%(repo_name)s.git" }]'
+#      function: 
+#      tests:
+#      - parameters: { command: "git remote add origin git@github.com:%(github_username)s/%(repo_name)s.git" }
+#        condition: 'should not fail'
+#
+#    gitPush: 
+#           name: gitPush
+#      description: "Pushes to repository"
+#      function: exec("git push -u origin master")
+#      parameter_desc: '{object} [{ command="" }]'
+#      tests:
+#      - parameters: { command: "./spec/api.yml" }
+#        condition: 'should not fail'
+#
+#        #    createGitlabRepo:
+#               name: createGitlabRepo
+#        #      description: "Remotely create a Github repository"
+#        #      function: exec
+#        #        #      parameter_desc: '{object} [{ command="" }]'
+#        #        #      tests:
+#        #      - parameters: { command: "curl -H 'Content-Type:application/json' https://gitlab.com/api/v3/projects?private_token=<token> -d '{ \"name\": \"<new repo name>\" }'"
+#        #        condition: 'should not fail'
+#

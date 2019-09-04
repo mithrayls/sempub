@@ -1,5 +1,5 @@
-const gitInit 						= require('./lib/git/gitInit.js')  
-const init								= require('./lib/init.js')
+const gitInit = require('./lib/git/gitInit.js')
+const init = require('./lib/init.js')
 
 /*
 const gitCreateGithubRepo = require('./lib/git/createGithubRepo.js')

@@ -1,0 +1,77 @@
+```mermaid
+graph TB
+
+subgraph Users
+  automated_testers[Automated Testers]
+  human_testers[Humans Testers]
+end
+
+subgraph User Interface
+  function_interface["Function - Interface"]
+  cli["CLI"]
+  documentation["Documentation"]
+  user_interface{"User Interface"}
+end
+
+subgraph Developers
+  devs["Developers"]
+  managers("Managers")
+end
+
+subgraph Developer Interface
+  spec.yml[Yaml Spec]
+  function_internals["Functions - Internal"]
+end
+
+subgraph Process Specs
+  testgen["@mithray/bdd-testgen"]
+  fungen["@mithray/bdd-fungen"]
+  cligen["@mithray/bdd-cligen"]
+  docgen["@mithray/bdd-docgen"]
+  sempub["sempub"]
+end
+
+subgraph Other Projects
+restruct["@mithray/restruct"]
+logger["@mithray/logger"]
+smd["@mithray/smd"]
+mnd["@mithray/mnd"]
+end
+
+devs -- writes specs --> spec.yml
+devs -- solves specs --> function_internals
+managers -- "(re)describes specs" --> devs
+
+human_testers -- Do tests pass? --> user_interface
+automated_testers -- Do tests pass? --> user_interface
+
+user_interface -- yes, next spec --> managers
+user_interface -- no, rewrite spec solution --> managers
+
+function_internals --> spec.yml
+spec.yml --> sempub
+sempub -- generates --> user_interface
+sempub -- generates --> automated_testers
+
+
+style spec.yml fill:beige,stroke:#ccc,stroke-width:1px;
+style function_internals fill:beige,stroke:#ccc,stroke-width:1px;
+style testgen fill:burlywood,stroke:#ccc,stroke-width:1px;
+style fungen fill:burlywood,stroke:#ccc,stroke-width:1px;
+style cligen fill:burlywood,stroke:#ccc,stroke-width:1px;
+style docgen fill:burlywood,stroke:#ccc,stroke-width:1px
+style sempub fill:burlywood,stroke:#888,stroke-width:1px;
+style devs fill:steelblue,stroke:#888,stroke-width:1px
+style managers fill:steelblue,stroke:#888,stroke-width:1px
+style human_testers fill:palevioletred,stroke:#888,stroke-width:1px
+style automated_testers fill:palevioletred,stroke:#888,stroke-width:1px
+style cli fill:mediumseagreen,stroke:#888,stroke-width:1px
+style function_interface fill:mediumseagreen,stroke:#888,stroke-width:1px
+style documentation fill:mediumseagreen,stroke:#888,stroke-width:1px
+style user_interface fill:mediumseagreen,stroke:#888,stroke-width:1px
+style mnd fill:lightblue,stroke:#888,stroke-width:1px
+style smd fill:lightblue,stroke:#888,stroke-width:1px
+style logger fill:lightblue,stroke:#888,stroke-width:1px
+style restruct fill:lightblue,stroke:#888,stroke-width:1px
+```
+
