@@ -1,34 +1,3 @@
-#git:
-#  gitRepoExists
-#  gitInit:
-#    type: 
-#  gitCreateRepo
-#  gitAdd
-#  gitCommit
-##################
-#  Options
-##################
-
-#------- test types ---------
-#
-#  should be / expect to be
-#
-#  a <type>
-#  equal <value>
-#  have_length_of <integer>
-#  have_property <string>
-#  instance_of <>
-#
-
-path_prefix: "lib"
-api_name: git
-
-api:
-
-    # -------------- #
-    # Initialization #
-    # -------------- #
-    
     gitRepoExists:
       name: gitRepoExists
       description: Check if git repository exists

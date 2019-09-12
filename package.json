@@ -1,61 +1,64 @@
 {
-  "author": "mithrayls <mithray@protonmail.com> (https://mithrayls.github.io/)",
-  "bin": {
-    "sempub": "./bin/index.js"
-  },
-  "dependencies": {
-    "@mithray/analyze-js": "0.0.13",
-    "@mithray/bdd-cligen": "0.0.1",
-    "@mithray/bdd-roadmap": "0.0.3",
-    "@mithray/logger": "0.0.2",
-    "@mithray/md-terminal": "0.0.1",
-    "ansi-colors": "^4.1.1",
-    "argon2": "^0.24.1",
-    "commander": "^3.0.1",
-    "config-store": "^0.3.1",
-    "configstore": "^5.0.0",
-    "inquirer": "^7.0.0",
-    "jsdoc-to-markdown": "^5.0.0",
-    "log-update": "^3.2.0",
-    "loglevel": "^1.6.3",
-    "node-emoji": "^1.10.0",
-    "semver": "^6.3.0",
-    "shell-escape-tag": "^1.2.2",
-    "sprintf-js": "^1.1.2",
-    "string-template": "^1.0.0",
-    "tweetnacl": "^1.0.1",
-    "yaml": "^1.6.0"
-  },
-  "deprecated": false,
-  "description": "Automatically updates version, pushes to git and publishes your npm package.",
-  "devDependencies": {},
-  "license": "MIT",
-  "main": "index.js",
-  "name": "sempub",
-  "keywords": [
-    "semantic versioning",
-    "npm",
-    "publish",
-    "workflow",
-    "utility",
-    "CI",
-    "CD"
-  ],
-  "preferGlobal": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "0.1.49",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mithrayls/sempub.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mithrayls/sempub/issues"
-  },
-  "homepage": "https://github.com/mithrayls/sempub#readme",
-  "directories": {
-    "doc": "docs",
-    "lib": "lib"
-  }
+    "author": "mithrayls <mithray@protonmail.com> (https://mithrayls.github.io/)",
+    "bin": {
+        "sempub": "./bin/index.js"
+    },
+    "dependencies": {
+        "@hapi/joi": "^16.0.0",
+        "@mithray/analyze-js": "0.0.13",
+        "@mithray/bdd-cligen": "0.0.1",
+        "@mithray/bdd-roadmap": "0.0.3",
+        "@mithray/logger": "0.0.2",
+        "@mithray/md-terminal": "0.0.1",
+        "ansi-colors": "^4.1.1",
+        "argon2": "^0.24.1",
+        "bs58": "^4.0.1",
+        "btoa": "^1.2.1",
+        "commander": "^3.0.1",
+        "config-store": "^0.3.1",
+        "configstore": "^5.0.0",
+        "inquirer": "^7.0.0",
+        "jsdoc-to-markdown": "^5.0.0",
+        "log-update": "^3.2.0",
+        "loglevel": "^1.6.3",
+        "node-emoji": "^1.10.0",
+        "semver": "^6.3.0",
+        "shell-escape-tag": "^1.2.2",
+        "sprintf-js": "^1.1.2",
+        "string-template": "^1.0.0",
+        "tweetnacl": "^1.0.1",
+        "yaml": "^1.6.0"
+    },
+    "deprecated": false,
+    "description": "Automatically updates version, pushes to git and publishes your npm package.",
+    "devDependencies": {},
+    "license": "MIT",
+    "main": "index.js",
+    "name": "sempub",
+    "keywords": [
+        "semantic versioning",
+        "npm",
+        "publish",
+        "workflow",
+        "utility",
+        "CI",
+        "CD"
+    ],
+    "preferGlobal": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "version": "0.1.49",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mithrayls/sempub.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mithrayls/sempub/issues"
+    },
+    "homepage": "https://github.com/mithrayls/sempub#readme",
+    "directories": {
+        "doc": "docs",
+        "lib": "lib"
+    }
 }
