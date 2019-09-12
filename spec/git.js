@@ -1,7 +1,8 @@
 const Joi = require('@hapi/joi')
 const exec = require('../lib/exec.js')
-let routes = [
-    {
+
+let routes = {
+    exists: {
         method: 'GET',
         path: '/git/exists',
         //description: Check if git repository exists,
@@ -11,7 +12,7 @@ let routes = [
             return stdout
         }
     },
-    {
+    init: {
         //description: Initialize a git repository,
         method: 'GET',
         path: '/git/init',
@@ -21,7 +22,7 @@ let routes = [
             return stdout
         }
     },
-    {
+    ignore: {
         //description: Initialize a .gitignore file,
         method: 'GET',
         path: '/git/ignore',
@@ -31,7 +32,7 @@ let routes = [
             return stdout
         }
     },
-    {
+    add: {
         method: 'GET',
         path: '/git/add',
         //description: Add files to git repo,
@@ -41,14 +42,12 @@ let routes = [
             return stdout
         }
     },
-    {
+    commit: {
         method: 'GET',
         path: '/git/commit',
         //description: Commit changes to a git repository,
         handler: async (request, h) => {
-            console.log(request.query.message)
             let command = `git commit -m "${request.query.message}"`
-            console.log(command)
             let res = await exec(command)
             let stdout = res.stdout
             return stdout
@@ -65,60 +64,44 @@ let routes = [
         }
      */
     },
-    /*
-    createGithubRepo: {
-        name: createGithubRepo,
-        //description: Remotely create a Github repository,
-        func_name: exec,
-        params_user: [
-            {
-                name: user,
-                //description: Github username,
-                type: string,
-                default: null
-            },
-            {
-                name: name,
-                //description: The name of the github repo you wish to create,
-                type: string,
-                default: null
-            },
-            {
-                name: token,
-                //description: Github token for accessing API,
-                type: string,
-                default: null
-            }
-        ],
-        params_internal: [
-            {
-                name: command,
-                //description: Currently requires curl to work,
-                type: string,
-                default: curl -u '${user}:${token}' https://api.github.com/user/repos -d '{\name\:\${repo_name}\}'
-            }
-        ],
-        tests: [
-            {
-                params_user: {
-                    user: some_random_username,
-                    repo: some_repo_name
-                },
-                condition: Should not fail
-            }
-        ]
+    create: {
+        method: 'GET',
+        path: '/github/create-repo',
+        handler: async (request, h) => {
+            let endpoint = 'https://api.github.com/user/repos'
+            let user = request.query.user || request.query.u
+            let token = request.query.token || process.env.GITHUB_API_TOKEN
+            let name = request.query.name || request.query.n
+            let command = `curl -u "${user}:${token}" ${endpoint} -d '{ "name": "${name}" }'`
+            console.log(command)
+            let res = await exec(command)
+            let stdout = res.stdout
+            return stdout
+        }
     },
-    */
-    {
+    /*
+     */
+    branch: {
         //description: Pushes to repository,
         method: 'GET',
-        path: '/git/push',
+        path: '/git/branch',
         handler: async (request, h) => {
             let res = await exec('git push -u origin master')
             let stdout = res.stdout
             return stdout
         }
+    },
+    push: {
+        //description: Pushes to repository,
+        method: 'GET',
+        path: '/git/push',
+        handler: async (request, h) => {
+            let res = await exec('git push')
+            let stdout = res.stdout
+            console.log(res)
+            return stdout
+        }
     }
-]
+}
 
 module.exports = routes
