@@ -47,7 +47,8 @@ let routes = [
         //description: Commit changes to a git repository,
         handler: async (request, h) => {
             console.log(request.query.message)
-            let command = 'git commit -m "${request.query.message}"'
+            let command = `git commit -m "${request.query.message}"`
+            console.log(command)
             let res = await exec(command)
             let stdout = res.stdout
             return stdout
