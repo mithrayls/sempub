@@ -105,7 +105,7 @@ let routes = {
     },
     delete: {
         method: 'GET',
-        path: '/git/delete',
+        path: '/github/delete',
         handler: async (request, h) => {
             let user = request.query.user || request.query.u
             let token = request.query.token || process.env.GITHUB_API_TOKEN
