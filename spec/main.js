@@ -55,7 +55,7 @@ let routes = [
             res += '\n' + 'git push: ' + res5.stdout
 */
 
-            return stdout
+            return res
         }
     }
     /*,
