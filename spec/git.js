@@ -65,21 +65,6 @@ let routes = {
         }
      */
     },
-    create: {
-        method: 'GET',
-        path: '/github/create-repo',
-        handler: async (request, h) => {
-            let endpoint = 'https://api.github.com/user/repos'
-            let user = request.query.user || request.query.u
-            let token = request.query.token || process.env.GITHUB_API_TOKEN
-            let name = request.query.name || request.query.n
-            let command = `curl -u "${user}:${token}" ${endpoint} -d '{ "name": "${name}" }'`
-            console.log(command)
-            let res = await exec(command)
-            let stdout = res.stdout
-            return stdout
-        }
-    },
     /*
      */
     branch: {
@@ -100,6 +85,21 @@ let routes = {
             let res = await exec('git push')
             let stdout = res.stdout
             console.log(res)
+            return stdout
+        }
+    },
+    create: {
+        method: 'GET',
+        path: '/github/create',
+        handler: async (request, h) => {
+            let endpoint = 'https://api.github.com/user/repos'
+            let user = request.query.user || request.query.u
+            let token = request.query.token || process.env.GITHUB_API_TOKEN
+            let name = request.query.name || request.query.n
+            let command = `curl -u "${user}:${token}" ${endpoint} -d '{ "name": "${name}" }'`
+            console.log(command)
+            let res = await exec(command)
+            let stdout = res.stdout
             return stdout
         }
     },
