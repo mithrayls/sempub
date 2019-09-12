@@ -64,7 +64,7 @@ let routes = [
             }
         }
      */
-    }
+    },
     /*
     createGithubRepo: {
         name: createGithubRepo,
@@ -108,29 +108,17 @@ let routes = [
             }
         ]
     },
-    gitPush: {
-        name: gitPush,
-        //description: Pushes to repository,
-        func_name: exec,
-        params_user: null,
-        params_internal: [
-            {
-                name: command,
-                //description: null,
-                type: string,
-                default: git push -u origin master
-            }
-        ],
-        tests: [
-            {
-                parameters: {
-                    command: ./spec/api.yml
-                },
-                condition: should not fail
-            }
-        ]
-    }
     */
+    {
+        //description: Pushes to repository,
+        method: 'GET',
+        path: '/git/push',
+        handler: async (request, h) => {
+            let res = await exec('git push -u origin master')
+            let stdout = res.stdout
+            return stdout
+        }
+    }
 ]
 
 module.exports = routes
