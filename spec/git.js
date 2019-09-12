@@ -71,12 +71,25 @@ let routes = {
     },
     /*
      */
-    branch: {
+    upstream: {
         //description: Pushes to repository,
         method: 'GET',
-        path: '/git/branch',
+        path: '/git/upstream',
         handler: async (request, h) => {
-            let res = await exec('git push -u origin master')
+            let remote_name = request.query.remote
+            let res = await exec(`git push -u ${remote_name} master`)
+            let stdout = res.stdout
+            return stdout
+        }
+    },
+    remote: {
+        //description: Pushes to repository,
+        method: 'GET',
+        path: '/git/remote/add',
+        handler: async (request, h) => {
+            let remote_name = request.query.remote
+            let url = request.query.url
+            let res = await exec(`git remote add ${remote_name} ${url}`)
             let stdout = res.stdout
             return stdout
         }
@@ -86,18 +99,25 @@ let routes = {
         method: 'GET',
         path: '/git/push',
         handler: async (request, h) => {
-            let res = await exec('git push')
+            let remote_name
+            if (request.query.remote) {
+                remote_name = request.query.remote
+            }
+            let res = await exec(`git push ${remote_name}`)
             let stdout = res.stdout
             console.log(res)
             return stdout
         }
     },
-    create: {
+    github_create: {
         method: 'GET',
         path: '/github/create',
         handler: async (request, h) => {
             let endpoint = 'https://api.github.com/user/repos'
-            let user = request.query.user || request.query.u
+            let user =
+                (await request.query.user) ||
+                (await request.query.u) ||
+                (await songshu.getSet('GITHUB_USER_NAME'))
             let token =
                 (await request.query.token) ||
                 (await process.env.GITHUB_API_TOKEN) ||
@@ -110,12 +130,18 @@ let routes = {
             return stdout
         }
     },
-    delete: {
+    github_delete: {
         method: 'GET',
         path: '/github/delete',
         handler: async (request, h) => {
-            let user = request.query.user || request.query.u
-            let token = request.query.token || process.env.GITHUB_API_TOKEN
+            let user =
+                (await request.query.user) ||
+                (await request.query.u) ||
+                (await songshu.getSet('GITHUB_USER_NAME'))
+            let token =
+                request.query.token ||
+                process.env.GITHUB_API_TOKEN ||
+                (await songshu.getSet('GITHUB_API_TOKEN'))
             let name = request.query.name || request.query.n
 
             let endpoint = `https://api.github.com/repos/${user}/${name}`
@@ -124,6 +150,44 @@ let routes = {
             let res = await exec(command)
             let stdout = res.stdout
             console.log(res)
+            return stdout
+        }
+    },
+    gitea_create: {
+        method: 'GET',
+        path: '/gitea/create',
+        handler: async (request, h) => {
+            let user = (await request.query.user) || (await request.query.u)
+            let token =
+                (await request.query.token) ||
+                (await process.env.GITEA_API_TOKEN) ||
+                (await songshu.getSet('GITEA_API_TOKEN'))
+            let endpoint = `http://localhost:3000/api/v1/user/repos?access_token=${token}`
+            let name = request.query.name || request.query.n
+            let headers = [
+                `-H "accept: application/json"`,
+                `-H "Content-Type: application/json"`
+                //                `-H "Authorization: token ${token}"`
+            ]
+            headers = headers.join(' ')
+            let data = {
+                /*
+                auto_init: true,
+                description: 'An apt description',
+                gitignores: 'node_modules',
+                issue_labels: 'string',
+                license: 'MIT',
+                private: true,
+                readme: 'string'
+                */
+                name: name
+            }
+            data = JSON.stringify(data)
+            let command = `curl -X POST '${endpoint}' ${headers} -d '${data}'`
+
+            console.log(command)
+            let res = await exec(command)
+            let stdout = res.stdout
             return stdout
         }
     }
