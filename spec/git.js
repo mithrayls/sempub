@@ -97,12 +97,9 @@ let routes = {
     push: {
         //description: Pushes to repository,
         method: 'GET',
-        path: '/git/push',
+        path: '/git/push/{remote?}',
         handler: async (request, h) => {
-            let remote_name
-            if (request.query.remote) {
-                remote_name = request.query.remote
-            }
+            let remote_name = request.params.remote ? request.params.remote : ''
             let res = await exec(`git push ${remote_name}`)
             let stdout = res.stdout
             console.log(res)
