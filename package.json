@@ -1,44 +1,45 @@
 {
-  "author": "mithrayls <mithray@protonmail.com> (https://mithrayls.github.io/)",
-  "bin": {
-    "sempub": "./bin/index.js"
-  },
-  "dependencies": {
-    "@hapi/joi": "^16.0.0",
-    "node-fetch": "^2.6.0",
-    "semver": "^6.3.0",
-    "yaml": "^1.6.0"
-  },
-  "deprecated": false,
-  "description": "Automatically updates version, pushes to git and publishes your npm package.",
-  "devDependencies": {},
-  "license": "MIT",
-  "main": "index.js",
-  "name": "sempub",
-  "keywords": [
-    "semantic versioning",
-    "npm",
-    "publish",
-    "workflow",
-    "utility",
-    "CI",
-    "CD"
-  ],
-  "preferGlobal": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "0.1.51",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mithrayls/sempub.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mithrayls/sempub/issues"
-  },
-  "homepage": "https://github.com/mithrayls/sempub#readme",
-  "directories": {
-    "doc": "docs",
-    "lib": "lib"
-  }
+    "author": "mithrayls <mithray@protonmail.com> (https://mithrayls.github.io/)",
+    "bin": {
+        "sempub": "./bin/index.js"
+    },
+    "dependencies": {
+        "@hapi/joi": "^16.0.0",
+        "emiln": "0.0.2",
+        "node-fetch": "^2.6.0",
+        "semver": "^6.3.0",
+        "yaml": "^1.6.0"
+    },
+    "deprecated": false,
+    "description": "Automatically updates version, pushes to git and publishes your npm package.",
+    "devDependencies": {},
+    "license": "MIT",
+    "main": "index.js",
+    "name": "sempub",
+    "keywords": [
+        "semantic versioning",
+        "npm",
+        "publish",
+        "workflow",
+        "utility",
+        "CI",
+        "CD"
+    ],
+    "preferGlobal": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "version": "0.1.51",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mithrayls/sempub.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mithrayls/sempub/issues"
+    },
+    "homepage": "https://github.com/mithrayls/sempub#readme",
+    "directories": {
+        "doc": "docs",
+        "lib": "lib"
+    }
 }

@@ -14,5 +14,5 @@ function encrypt(key) {
     console.log(encrypted)
 }
 
-const key = '897a4e252730a485cd27ecc409606dc1ab639664234ae5533518067d927d335f'
+const key = '897a4e252730a485cd27ecc409606dc1ab639664234ae5533518067d927d335ef'
 encrypt(key)
