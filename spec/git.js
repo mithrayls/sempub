@@ -56,7 +56,13 @@ let routes = {
             let res = await exec(command)
             let stdout = res.stdout
             return stdout
+        },
+        options: {
+            description: 'Get todo',
+            notes: 'Returns a todo item by the id passed in the path',
+            tags: ['api'] // ADD THIS TAG}
         }
+
         /*
         options: {
             validate: {

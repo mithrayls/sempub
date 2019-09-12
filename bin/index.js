@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const emiln = require('emiln')
+const emiln = require('../../emiln')
 
 let commands = [
     Object.values(require('../spec/git.js')),
@@ -8,5 +8,5 @@ let commands = [
 ]
 emiln(commands, process.argv).then(async res => {
     console.log(await res)
-    process.exit(1)
+    //    process.exit(1)
 })
