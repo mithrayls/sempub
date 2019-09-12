@@ -101,6 +101,23 @@ let routes = {
             console.log(res)
             return stdout
         }
+    },
+    delete: {
+        method: 'GET',
+        path: '/git/delete',
+        handler: async (request, h) => {
+            let user = request.query.user || request.query.u
+            let token = request.query.token || process.env.GITHUB_API_TOKEN
+            let name = request.query.name || request.query.n
+
+            let endpoint = `https://api.github.com/repos/${user}/${name}`
+            let command = `curl -X DELETE -u "${user}:${token}" ${endpoint}`
+            console.log(command)
+            let res = await exec(command)
+            let stdout = res.stdout
+            console.log(res)
+            return stdout
+        }
     }
 }
 

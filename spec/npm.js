@@ -25,6 +25,17 @@ let routes = {
             return stdout
         }
     },
+    version: {
+        method: 'GET',
+        path: '/npm/version',
+        //description: Check if git repository exists,
+        handler: async (request, h) => {
+            let command = 'npm version patch'
+            let res = await exec(command)
+            let stdout = res.stdout
+            return stdout
+        }
+    },
     publish: {
         method: 'GET',
         path: '/npm/publish',
