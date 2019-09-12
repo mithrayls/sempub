@@ -45,8 +45,8 @@ let routes = [
             res += await git.add.handler(request, h)
             res += await git.commit.handler(request, h)
             res += await git.push.handler(request, h)
-            res += await npm.version.handler(request, h)
             res += await npm.publish.handler(request, h)
+            res += await npm.version.handler(request, h)
             return res
         }
     }

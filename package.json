@@ -8,6 +8,7 @@
         "emiln": "0.0.2",
         "node-fetch": "^2.6.0",
         "semver": "^6.3.0",
+        "songshu": "0.0.15",
         "yaml": "^1.6.0"
     },
     "deprecated": false,

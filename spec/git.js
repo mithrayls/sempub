@@ -1,5 +1,9 @@
 const Joi = require('@hapi/joi')
 const exec = require('../lib/exec.js')
+const Songshu = require('songshu')
+const fs = require('fs')
+const packageJson = JSON.parse(fs.readFileSync('./package.json'))
+const songshu = new Songshu(packageJson.name)
 
 let routes = {
     exists: {
@@ -94,7 +98,10 @@ let routes = {
         handler: async (request, h) => {
             let endpoint = 'https://api.github.com/user/repos'
             let user = request.query.user || request.query.u
-            let token = request.query.token || process.env.GITHUB_API_TOKEN
+            let token =
+                (await request.query.token) ||
+                (await process.env.GITHUB_API_TOKEN) ||
+                (await songshu.getSet('GITHUB_API_TOKEN'))
             let name = request.query.name || request.query.n
             let command = `curl -u "${user}:${token}" ${endpoint} -d '{ "name": "${name}" }'`
             console.log(command)
