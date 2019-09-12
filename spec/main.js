@@ -38,10 +38,15 @@ let routes = [
             let res = ''
 
             res += await git.add.handler(request, h)
+            console.log(res)
             res += await git.commit.handler(request, h)
+            console.log(res)
             res += await git.create.handler(request, h)
+            console.log(res)
             res += await git.branch.handler(request, h)
+            console.log(res)
             res += await git.push.handler(request, h)
+            console.log(res)
             /*
             let res1 = await exec('git add')
             let res2 = await exec('git commit -m')
