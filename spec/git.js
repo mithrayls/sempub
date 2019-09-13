@@ -40,12 +40,15 @@ let routes = {
         handler: async (request, h) => {
             let res = await exec('git add .')
             return res
+        },
+        options: {
+            description: 'Adds files to a git repository',
+            tags: ['api']
         }
     },
     commit: {
         method: 'GET',
         path: '/git/commit',
-        //description: Commit changes to a git repository,
         handler: async (request, h) => {
             let message = request.query.message || request.query.m
             let command = `git commit -m "${message}"`
@@ -54,7 +57,7 @@ let routes = {
             return res
         },
         options: {
-            description: 'Commits to your local repository',
+            description: 'Commit changes to a git repository',
             notes: 'Returns a todo item by the id passed in the path',
             /*
             validate: {
