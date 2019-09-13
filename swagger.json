@@ -1,64 +1,40 @@
 {
-    "swagger": "3.0.2",
+    "swagger": "2.0",
     "info": {
-        "title": "Sempub",
-        "description": "Semantic Publishing",
-        "version": "1.0"
+        "version": "1.0.0",
+        "title": "Simple API",
+        "description": "A simple API to learn how to write OpenAPI Specification"
     },
-    "servers": [
-        { "url": "http://localhost:3001/", "description": "Home route" }
-    ],
+    "schemes": ["https"],
+    "host": "simple.api",
+    "basePath": "/openapi101",
     "paths": {
-        "/api": {
-            "git": {
-                "summary": "Using git",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "ID of pet to use",
-                        "required": true,
+        "/persons": {
+            "get": {
+                "summary": "Gets some persons",
+                "description": "Returns a list containing all persons.",
+                "responses": {
+                    "200": {
+                        "description": "A list of Person",
                         "schema": {
                             "type": "array",
                             "items": {
-                                "type": "string"
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string"
+                                    },
+                                    "lastName": {
+                                        "type": "string"
+                                    },
+                                    "username": {
+                                        "type": "string"
+                                    }
+                                }
                             }
-                        },
-                        "style": "simple"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "schema": {
-                            "uniqueItems": false,
-                            "type": "array",
-                            "items": { "type": "string" }
                         }
                     }
                 }
-            },
-            "post": {
-                "tags": ["Values"],
-                "operationId": "Post",
-                "consumes": [
-                    "application/json-patch+json",
-                    "application/json",
-                    "text/json",
-                    "application/*+json"
-                ],
-                "produces": [],
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "required": false,
-                        "schema": { "type": "string" }
-                    }
-                ],
-                "responses": { "200": { "description": "Success" } }
             }
         }
-    },
-    "definitions": {}
+    }
 }
