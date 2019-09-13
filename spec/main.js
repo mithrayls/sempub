@@ -45,8 +45,12 @@ let routes = [
             }
 
             let upstream = await git.getUpstream.handler(request, h)
+            let remoteExists = await github.remoteExists(request, h)
+            if (!remoteExists) {
+                console.log('creating github remote repo')
+                await github.createRepo.handler(request, h)
+            }
             if (!upstream) {
-                await github.create.handler(request, h)
                 console.log('adding remote repo')
                 await git.remote.handler(request, h)
                 console.log('setting upstream repo')
