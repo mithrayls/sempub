@@ -49,8 +49,8 @@ let routes = {
             let command = `git commit -m "${message}"`
             console.log(command)
             let res = await exec(command)
-            console.log(res)
-            return res
+            let stdout = res.stdout
+            return stdout
         },
         options: {
             description: 'Commit changes to a git repository',
