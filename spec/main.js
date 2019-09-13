@@ -31,7 +31,7 @@ let routes = [
             console.log(res)
             res += await git.commit.handler(request, h)
             res += await git.github_create.handler(request, h)
-            res += await git.branch.handler(request, h)
+            //            res += await git.branch.handler(request, h)
             res += await git.push.handler(request, h)
 
             return res
