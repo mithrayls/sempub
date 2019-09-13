@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+const emiln = require('../../emiln')
+const Joi = require('@hapi/joi')
+const exec = require('../lib/exec.js')
+const Songshu = require('songshu')
+const fs = require('fs')
+const packageJson = JSON.parse(fs.readFileSync('./package.json'))
+const songshu = new Songshu(packageJson.name)
+
+emiln('./commands.js', process.argv).then(async res => {
+    console.log(await res)
+    //    process.exit(1)
+})
