@@ -1,18 +1,32 @@
 {
-    "swagger": "3.0",
+    "swagger": "3.0.2",
     "info": {
-        "version": "1.0",
-        "title": "WebApplication1",
-        "description": "This is a description for WebApplication1"
+        "title": "Sempub",
+        "description": "Semantic Publishing",
+        "version": "1.0"
     },
+    "servers": [
+        { "url": "http://localhost:3001/", "description": "Home route" }
+    ],
     "paths": {
-        "/api/Values": {
-            "get": {
-                "tags": ["Values"],
-                "operationId": "Get",
-                "consumes": [],
-                "produces": ["text/plain", "application/json", "text/json"],
-                "parameters": [],
+        "/api": {
+            "git": {
+                "summary": "Using git",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of pet to use",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "style": "simple"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Success",
