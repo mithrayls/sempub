@@ -1,9 +1,5 @@
 const Joi = require('@hapi/joi')
 const exec = require('../lib/exec.js')
-const Songshu = require('songshu')
-const fs = require('fs')
-const packageJson = JSON.parse(fs.readFileSync('./package.json'))
-const songshu = new Songshu(packageJson.name)
 
 let routes = {
     exists: {
@@ -36,7 +32,6 @@ let routes = {
     add: {
         method: 'GET',
         path: '/git/add',
-        //description: Add files to git repo,
         handler: async (request, h) => {
             let res = await exec('git add .')
             return res

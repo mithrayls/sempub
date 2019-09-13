@@ -1,15 +1,15 @@
 const Joi = require('@hapi/joi')
 const exec = require('../lib/exec.js')
-const Songshu = require('songshu')
 const fs = require('fs')
-const packageJson = JSON.parse(fs.readFileSync('./package.json'))
-const songshu = new Songshu(packageJson.name)
 
 let routes = {
     gitea_create: {
         method: 'GET',
         path: '/gitea/create',
         handler: async (request, h) => {
+const Songshu = require('songshu')
+const packageJson = JSON.parse(fs.readFileSync('./package.json'))
+const songshu = new Songshu(packageJson.name)
             let user = (await request.query.user) || (await request.query.u)
             let token =
                 (await request.query.token) ||

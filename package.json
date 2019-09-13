@@ -5,7 +5,7 @@
     },
     "dependencies": {
         "@hapi/joi": "^16.0.0",
-        "emiln": "0.0.3",
+        "emiln": "0.0.5",
         "node-fetch": "^2.6.0",
         "semver": "^6.3.0",
         "songshu": "0.0.15",

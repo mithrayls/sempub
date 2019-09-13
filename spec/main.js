@@ -1,6 +1,7 @@
 const Joi = require('@hapi/joi')
 const exec = require('../lib/exec.js')
 const git = require('./git.js')
+const github = require('./github.js')
 const npm = require('./npm.js')
 
 let routes = [
@@ -31,11 +32,18 @@ let routes = [
             let res = ''
 
             res += await git.add.handler(request, h)
-            //           console.log(res)
+
+                       console.log(res)
             res += await git.commit.handler(request, h)
-            //            res += await git.github_create.handler(request, h)
-            //            res += await git.branch.handler(request, h)
+                       console.log(res)
+                        res += await github.create.handler(request, h)
+                       console.log(res)
+                        res += await git.remote.handler(request, h)
+                       console.log(res)
+                        res += await git.upstream.handler(request, h)
+                       console.log(res)
             res += await git.push.handler(request, h)
+                       console.log(res)
 
             return res
         },
