@@ -49,6 +49,7 @@ let routes = {
             let command = `git commit -m "${message}"`
             console.log(command)
             let res = await exec(command)
+            console.log(res)
             return res
         },
         options: {
@@ -78,13 +79,15 @@ let routes = {
     },
     /*
      */
-    upstream: {
+    setUpstream: {
         //description: Pushes to repository,
         method: 'GET',
-        path: '/git/upstream',
+        path: '/git/set/upstream',
         handler: async (request, h) => {
             let remote_name = request.query.remote
-            let res = await exec(`git push -u ${remote_name} master`)
+            let command = `git push -u ${remote_name} master`
+            console.log(command)
+            let res = await exec(command)
             return res
         }
     },
@@ -95,7 +98,22 @@ let routes = {
         handler: async (request, h) => {
             let remote_name = request.query.remote
             let url = request.query.url
-            let res = await exec(`git remote add ${remote_name} ${url}`)
+            let command = `git remote add ${remote_name} ${url}`
+            console.log(command)
+            let res = await exec(command)
+            return res
+        }
+    },
+    diff: {
+        method: 'GET',
+        path: '/git/diff',
+        handler: async (request, h) => {
+            let remote_name = request.query.remote
+            let url = request.query.url
+            let command = `git diff --cached`
+            console.log(command)
+            let res = await exec(command)
+            console.log(res)
             return res
         }
     },
@@ -114,6 +132,27 @@ let routes = {
                     remote: 'Joi.string().min(2)'
                 }
             },
+            description: 'Pushes to repository'
+        }
+    },
+    getUpstream: {
+        method: 'GET',
+        path: '/git/get/upstream',
+        handler: async (request, h) => {
+            let upstream = false
+            let command = 'git rev-parse --abbrev-ref $branch@{upstream}'
+            let res = await exec(command)
+            let str = res.stdout.trim()
+            let repo_exists = RegExp('^[A-Za-z0-9-]*/[A-Za-z0-9-]*$').test(str)
+            if (repo_exists) {
+                upstream = str.replace(
+                    /^([A-Za-z0-9-]*)\/([A-Za-z0-9-]*)$/,
+                    '$1'
+                )
+            }
+            return upstream
+        },
+        options: {
             description: 'Pushes to repository'
         }
     }

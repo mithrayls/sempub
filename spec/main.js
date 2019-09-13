@@ -31,19 +31,29 @@ let routes = [
         handler: async (request, h) => {
             let res = ''
 
-            res += await git.add.handler(request, h)
+            console.log('adding local files')
+            await git.add.handler(request, h)
 
-                       console.log(res)
-            res += await git.commit.handler(request, h)
-                       console.log(res)
-                        res += await github.create.handler(request, h)
-                       console.log(res)
-                        res += await git.remote.handler(request, h)
-                       console.log(res)
-                        res += await git.upstream.handler(request, h)
-                       console.log(res)
-            res += await git.push.handler(request, h)
-                       console.log(res)
+            console.log('checking for changes')
+            let diff = await git.diff.handler(request, h)
+
+            if (diff.stdout.length > 1) {
+                console.log('committing files')
+                await git.commit.handler(request, h)
+            } else {
+                console.log('no changes to commit')
+            }
+
+            let upstream = await git.getUpstream.handler(request, h)
+            if (!upstream) {
+                await github.create.handler(request, h)
+                console.log('adding remote repo')
+                await git.remote.handler(request, h)
+                console.log('setting upstream repo')
+                await git.upstream.handler(request, h)
+            } else {
+            }
+            console.log('pushing files to repo')
 
             return res
         },
@@ -58,11 +68,16 @@ let routes = [
         path: '/publish',
         handler: async (request, h) => {
             let res = ''
-            res += await git.add.handler(request, h)
-            res += await git.commit.handler(request, h)
-            res += await git.push.handler(request, h)
-            res += await npm.publish.handler(request, h)
-            res += await npm.version.handler(request, h)
+            await git.add.handler(request, h)
+            await git.commit.handler(request, h)
+            await git.push.handler(request, h)
+            try {
+                await npm.publish.handler(request, h)
+            } catch {
+                await npm.versionPatch.handler(request, h)
+                await npm.publish.handler(request, h)
+            }
+            await npm.versionPatch.handler(request, h)
             return res
         },
         options: {

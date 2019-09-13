@@ -3,9 +3,9 @@ const exec = require('../lib/exec.js')
 const fs = require('fs')
 
 let routes = {
-    github_create: {
+    githubCreate: {
         method: 'GET',
-        path: '/github/create',
+        path: '/github/create/repo',
         handler: async (request, h) => {
             const Songshu = require('songshu')
             const packageJson = JSON.parse(fs.readFileSync('./package.json'))
@@ -27,9 +27,9 @@ let routes = {
             return stdout
         }
     },
-    github_delete: {
+    githubDelete: {
         method: 'GET',
-        path: '/github/delete',
+        path: '/github/delete/repo',
         handler: async (request, h) => {
             const Songshu = require('songshu')
             const packageJson = JSON.parse(fs.readFileSync('./package.json'))
@@ -51,6 +51,36 @@ let routes = {
             let stdout = res.stdout
             console.log(res)
             return stdout
+        }
+    },
+    githubRemoteExists: {
+        method: 'GET',
+        path: '/github/remote/exists',
+        handler: async (request, h) => {
+            const Songshu = require('songshu')
+            const packageJson = JSON.parse(fs.readFileSync('./package.json'))
+            const songshu = new Songshu(packageJson.name)
+            let name = request.query.name || request.query.n
+            let user =
+                (await request.query.user) ||
+                (await request.query.u) ||
+                (await songshu.getSet('GITHUB_USER_NAME'))
+            command = `curl https://api.github.com/repos/${user}/${name}`
+
+            console.log(command)
+
+            let res = await exec(command)
+            let stdout = JSON.parse(res.stdout.trim())
+            let message = stdout.message
+            let upstream_exists = false
+            if (message !== 'Not Found') {
+                upstream_exists = true
+            }
+            console.log(upstream_exists)
+            return upstream_exists
+        },
+        options: {
+            description: 'Checks if an upstream repository is set'
         }
     }
 }
