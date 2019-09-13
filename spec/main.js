@@ -28,9 +28,9 @@ let routes = [
             let res = ''
 
             res += await git.add.handler(request, h)
-            console.log(res)
+            //           console.log(res)
             res += await git.commit.handler(request, h)
-            res += await git.github_create.handler(request, h)
+            //            res += await git.github_create.handler(request, h)
             //            res += await git.branch.handler(request, h)
             res += await git.push.handler(request, h)
 
