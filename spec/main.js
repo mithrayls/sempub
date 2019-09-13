@@ -7,23 +7,26 @@ let routes = [
     {
         method: 'GET',
         path: '/init',
-        //description: configurable, composite, init sequence,
         //        handler: init
-        handler: async (request, h) => {
-            let res = ''
+        options: {
+            handler: async (request, h) => {
+                let res = ''
 
-            res += await git.init.handler(request, h)
-            res += await npm.init.handler(request, h)
-            res += await git.ignore.handler(request, h)
-            res += await git.add.handler(request, h)
+                res += await git.init.handler(request, h)
+                res += await npm.init.handler(request, h)
+                res += await git.ignore.handler(request, h)
+                res += await git.add.handler(request, h)
 
-            return res
+                return res
+            },
+            description: 'configurable, composite, init sequence',
+            notes: 'Returns a todo item by the id passed in the path',
+            tags: ['api'] // ADD THIS TAG
         }
     },
     {
         method: 'GET',
         path: '/distribute',
-        //description: configurable, composite, distribution sequence,
         handler: async (request, h) => {
             let res = ''
 
@@ -35,12 +38,16 @@ let routes = [
             res += await git.push.handler(request, h)
 
             return res
+        },
+        options: {
+            description: 'configurable, composite, distribution sequence',
+            notes: 'Returns a todo item by the id passed in the path',
+            tags: ['api'] // ADD THIS TAG
         }
     },
     {
         method: 'GET',
         path: '/publish',
-        //description: configurable, composite, publish sequence,
         handler: async (request, h) => {
             let res = ''
             res += await git.add.handler(request, h)
@@ -49,6 +56,12 @@ let routes = [
             res += await npm.publish.handler(request, h)
             res += await npm.version.handler(request, h)
             return res
+        },
+        options: {
+            //               handler: handlers.getToDo,
+            description: 'configurable, composite, publish sequence',
+            notes: 'Returns a todo item by the id passed in the path',
+            tags: ['api'] // ADD THIS TAG
         }
     }
     /*
